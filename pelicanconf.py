@@ -2,34 +2,31 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = 'kinoubenkyou'
+# Basic
+PATH = 'content'
 SITENAME = 'Code Bebop'
 SITEURL = ''
 
-PATH = 'content'
-
+# Time and Date
 TIMEZONE = 'Asia/Ho_Chi_Minh'
+DEFAULT_DATE_FORMAT = '%d %b %Y'
 
-DEFAULT_LANG = 'en'
+# Metadata
+AUTHOR = 'kinoubenkyou'
+FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})-(?P<title>.*)'
 
-# Feed generation is usually not desired when developing
+# Feed
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+# Pagination
+DEFAULT_PAGINATION = 2
 
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+# Translation
+DEFAULT_LANG = 'en'
 
-DEFAULT_PAGINATION = False
-
-# Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# Theme
+SOCIAL = ()
