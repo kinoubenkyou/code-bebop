@@ -8,12 +8,9 @@ Published at: [kinoubenkyou.github.io/code-bebop/](kinoubenkyou.github.io/code-b
 Dependency
 ------------
 
+* python3
 * pelican
 * ghp-import
-
-```shell
-pip3 install pelican ghp-import
-```
 
 Usage
 --------
