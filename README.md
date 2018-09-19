@@ -1,7 +1,9 @@
 CODE BEBOP
 ================
 
-Personal tech blog served at [](kinoubenkyou.github.io/code-bebop/)
+Personal tech blog
+
+Published at: [kinoubenkyou.github.io/code-bebop/](kinoubenkyou.github.io/code-bebop/)
 
 Dependency
 ------------
