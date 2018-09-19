@@ -3,6 +3,8 @@
 from __future__ import unicode_literals
 
 # Basic
+USE_FOLDER_AS_CATEGORY = True
+DELETE_OUTPUT_DIRECTORY = True
 PATH = 'content'
 SITENAME = 'Code Bebop'
 SITEURL = ''
