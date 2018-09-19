@@ -10,4 +10,5 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
+SITEURL = 'code-bebop'
 RELATIVE_URLS = True
