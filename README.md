@@ -5,7 +5,7 @@ Personal tech blog
 
 Published at: [kinoubenkyou.github.io/code-bebop/](kinoubenkyou.github.io/code-bebop/)
 
-Dependency
+Dependencies
 ------------
 
 * python3
