@@ -3,7 +3,7 @@ CODE BEBOP
 
 Personal tech blog
 
-Published at: [kinoubenkyou.github.io/code-bebop/](kinoubenkyou.github.io/code-bebop/)
+Published at: [kinoubenkyou.github.io/code-bebop/](https://kinoubenkyou.github.io/code-bebop/)
 
 Dependencies
 ------------
