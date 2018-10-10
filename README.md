@@ -20,6 +20,7 @@ Local:
 ```shell
 pelican -r
 # on another tab
+cd output
 python3 -m pelican.server
 ```
 
