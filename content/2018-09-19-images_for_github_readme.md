@@ -1,6 +1,6 @@
 Tags: Git
 
-The idea is storing the images for Github readme file on the repo itself. This can be done by using the relative image path of Github ([more info](https://help.github.com/articles/about-readmes/#relative-links-and-image-paths-in-readme-files)). For example: `![Github Logo](/images/logo.png)`
+The idea is storing images for Github readme file on the repo itself. This can be done by using the relative image path of Github ([more info](https://help.github.com/articles/about-readmes/#relative-links-and-image-paths-in-readme-files)). For example: `![Github Logo](/images/logo.png)`
 
 The path in between the `()` is the path of file on the repo itself. Github automatically uses the branch of displayed readme, or in other words, the current branch of the displayed page.
 
