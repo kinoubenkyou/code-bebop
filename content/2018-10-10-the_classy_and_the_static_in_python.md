@@ -27,7 +27,7 @@ weeb = Human("weeaboo")
 duck = Human("viet")
 ```
 
-If instance methods are referenced from their instance, a bound method object is returned.
+If instance methods can be accessed from their instance, a bound method object is returned.
 
 ```python
 print(weeb.instance_m)
@@ -42,7 +42,7 @@ weeb.instance_m()
 # homo sapiens
 ```
 
-If instances method are referenced from their class, an unbound method is returned instead.
+If instances method can be accessed from their class, an unbound method is returned instead.
 
 ```python
 print(Human.instance_m)
@@ -63,7 +63,7 @@ print(Human.class_m)
 # <bound method Human.class_m of <class '__main__.Human'>>
 ```
 
-Class methods can be referenced from both the instances and the class.
+Class methods can be accessed from both the instances and the class.
 
 ```python
 print(weeb.class_m)
@@ -83,7 +83,7 @@ Human.class_m()
 # homo sapiens
 ```
 
-Finally, static methods are not bounded to anything, yet they can be referenced from both the instances and the class, just like class methods.
+Finally, static methods are not bounded to anything, yet they can be accessed from both the instances and the class, just like class methods.
 
 ```python
 print(weeb.static_m)
