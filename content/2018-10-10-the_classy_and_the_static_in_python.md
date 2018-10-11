@@ -27,7 +27,7 @@ weeb = Human("weeaboo")
 duck = Human("viet")
 ```
 
-If instance methods can be accessed from their instance, a bound method object is returned.
+If instance methods are accessed from their instance, a bound method object is returned.
 
 ```python
 print(weeb.instance_m)
@@ -42,7 +42,7 @@ weeb.instance_m()
 # homo sapiens
 ```
 
-If instances method can be accessed from their class, an unbound method is returned instead.
+If instance methods are accessed from their class, an unbound method is returned instead.
 
 ```python
 print(Human.instance_m)
