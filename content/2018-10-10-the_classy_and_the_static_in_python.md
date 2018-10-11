@@ -34,7 +34,7 @@ print(weeb.instance_m)
 # <bound method Human.instance_m of <__main__.Human object at 0x7f6cec860320>>
 ```
 
-Bound methods implicitly get the bounded object passed as its first argument, and can be omitted when calling. Nevertheless, instance methods can access both instance and class variables.
+Bound methods implicitly get the bounded object passed as its first argument, and can be omitted when calling.
 
 ```python
 weeb.instance_m()
