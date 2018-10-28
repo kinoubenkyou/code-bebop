@@ -33,7 +33,7 @@ def quick_sort(elements):
             recurse(elements, start_index, pivot_index)
             recurse(elements, pivot_index+1, end_index)
 
-    # loop of dividing
+    # loops of dividing
     def partition(elements, start_index, end_index):
         pivot = elements[start_index]
         left_i = start_index
