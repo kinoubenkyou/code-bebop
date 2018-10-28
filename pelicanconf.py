@@ -25,7 +25,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Pagination
-DEFAULT_PAGINATION = 2
+DEFAULT_PAGINATION = 4
 
 # Translation
 DEFAULT_LANG = 'en'
