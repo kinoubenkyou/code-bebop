@@ -5,7 +5,7 @@ The idea of quick sort is choosing one element as the pivot and divide the other
 
 \- Space Complexity of O(1):
 
-Quick sort is in-place, which means only swapping elements the list.
+The sort is in-place, which means only swapping elements in the list.
 
 \- Non-stability:
 
@@ -13,11 +13,11 @@ When swapping elements to divide them into sub-lists, equal elements on the same
 
 \- Worst-case Time Complexity of O(n^2) Comparison and O(n^2) Swapping:
 
-The case happens when each loop of dividing elements has the pivot as the largest/smallest element and the rest are on their incorrect side, and thus produces one empty sub-list and the other sub-list with the remaining elements. This leads to n loops of dividing, with each loop having n comparison from one selection and 0 comparision from the other selection, as well as only n swappings.
+The case happens when each loop of dividing elements has the pivot as the largest/smallest element and the rest are on their incorrect side, and thus produces one empty sub-list and another sub-list with the remaining elements. This leads to n loops of dividing, with each loop having 2n comparison from one selection and 0 comparision from the other selection, as well as n swappings.
 
 \- Best-case Time Complexity of O(nlogn) Comparison and O(logn) Swapping:
 
-The case happens when each loop of dividing elements produces two equal-size sub-lists without any swapping as all elements are in their correct side. This leads to logn loops of dividing, with each loop still having totally n comparisons from both selections and only 1 swapping for the pivot.
+The case happens when each loop of dividing elements produces two equal-size sub-lists without any swapping as all elements are in their correct side. This leads to logn loops of dividing, with each loop still having totally 2n comparisons from both selections and only 1 swapping for the pivot.
 
 \- Implementation in Python:
 
