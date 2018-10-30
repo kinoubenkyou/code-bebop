@@ -13,11 +13,11 @@ When swapping with the first element on the unsorted side, the element's order r
 
 \- Worst-case Time Complexity of O(n^2) Comparison and O(n) Swapping:
 
-The sort always has n loops of finding the largest/smallest element, and each loop has n comparisons. This case happens when the list is sorted in the reversed direction and all loops have swapping.
+The sort always has n loops of finding the largest/smallest element, and each loop has n comparisons. This case happens when the list is sorted in the reversed direction and thus all loops have swapping.
 
 \- Best-case Time Complexity of O(n^2) Comparison and O(1) Swapping:
 
-The sort always has n^2 comparisons as explained in the worst case. This case happens when the list is already sorted and all loops have no swapping.
+The sort always has n^2 comparisons as explained in the worst case. This case happens when the list is already sorted and thus all loops have no swapping.
 
 \- Implementation in Python:
 
