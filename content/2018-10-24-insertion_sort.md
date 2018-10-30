@@ -3,9 +3,6 @@ Tags: Python
 
 The idea of insertion sort is inserting each element from the unsorted side to its correct position on the sorted side. This is done by repeatedly swapping the element with its adjacent element toward the sorted side. The sort repeats this until no element is left on the unsorted side.
 
-The characteristics and performance of the sort include:
-
-
 \- Space Complexity of O(1):
 
 The sort is in-place, which means only swapping elements in the list.
