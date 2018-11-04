@@ -13,11 +13,7 @@ When swapping elements to divide them into sub-lists, equal elements on the same
 
 \- Worst-case Time Complexity of O(n^2) Comparison and O(n^2) Swapping:
 
-The case happens when each loop of dividing elements has the pivot as the largest/smallest element and the rest are on their incorrect side, and thus produces one empty sub-list and another sub-list with the remaining elements. This leads to n loops of dividing, with each loop having 2n comparison from one selection and 0 comparision from the other selection, as well as n swappings.
-
-\- Best-case Time Complexity of O(nlogn) Comparison and O(logn) Swapping:
-
-The case happens when each loop of dividing elements produces two equal-size sub-lists without any swapping as all elements are in their correct side. This leads to logn loops of dividing, with each loop still having totally 2n comparisons from both selections and only 1 swapping for the pivot.
+The case happens when each dividing has the largest/smallest element as the pivot and the rest are on their incorrect side, and thus produces one empty sub-list and another sub-list with the remaining elements. This leads to n dividing, with each dividing having 2n comparison from one selection and 0 comparision from the other selection, as well as n swappings.
 
 \- Implementation in Python:
 
@@ -33,7 +29,7 @@ def quick_sort(elements):
             recurse(elements, start_index, pivot_index)
             recurse(elements, pivot_index+1, end_index)
 
-    # loops of dividing
+    # dividing
     def partition(elements, start_index, end_index):
         pivot = elements[start_index]
         left_i = start_index

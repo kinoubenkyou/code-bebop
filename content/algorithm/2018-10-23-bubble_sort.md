@@ -13,11 +13,7 @@ The sort only swaps adjacent, unequal elements so the order of equal elements ar
 
 \- Worst-case Time Complexity of O(n^2) Comparison and O(n^2) Swapping:
 
-This case happens when the list is sorted in the reversed direction and thus all loops of swapping round have every pair of adjacent elements swapped. This leads to n loops of prepending, with each loop having n comparisons and n swappings of adjacent element's pair.
-
-\- Best-case Time Complexity of O(n) Comparison and O(1) Swapping:
-
-This case happens when the list is already sorted and thus the first loop of swapping round have no swapping, making the sort stop early. This leads to only 1 loop of prepending, with n comparisons and 0 swappings of adjacent element's pair..
+This case happens when the list is sorted in the reversed direction and thus all loops of swapping round have every pair of adjacent elements swapped. This leads to n loops of swapping round, with each loop having n comparisons and n swappings of adjacent element's pair.
 
 \- Implementation in Python:
 

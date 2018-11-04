@@ -9,15 +9,11 @@ The sort is in-place, which means only swapping elements in the list.
 
 \- Non-stability:
 
-When swapping with the first element on the unsorted side, the element's order relative to its other equal elements might be broken.
+When swapping the first element on the unsorted side, the element's order relative to its other equal elements might be broken.
 
 \- Worst-case Time Complexity of O(n^2) Comparison and O(n) Swapping:
 
-The sort always has n loops of finding the largest/smallest element, and each loop has n comparisons. This case happens when the list is sorted in the reversed direction and thus all loops have swapping.
-
-\- Best-case Time Complexity of O(n^2) Comparison and O(1) Swapping:
-
-The sort always has n^2 comparisons as explained in the worst case. This case happens when the list is already sorted and thus all loops have no swapping.
+The sort always has n loops of building the sorted side, with each loop always has n comparisons to select the largest/smallest element. The case happens when each loop has 1 swapping.
 
 \- Implementation in Python:
 
@@ -26,7 +22,7 @@ def swap(elements, index_1, index_2):
     elements[index_1], elements[index_2] = elements[index_2], elements[index_1]
 
 def selection_sort(elements):
-    # loops of finding largest element
+    # loops of building the sorted side
     for i in range(len(elements)):
         max_index = i
         max_element = elements[i]
@@ -36,7 +32,6 @@ def selection_sort(elements):
                 max_index = i + index
                 max_element = element
 
-        # swapping the largest element with the first element on the unsorted side
         if max_index != i:
             swap(elements, max_index, i)
 ```

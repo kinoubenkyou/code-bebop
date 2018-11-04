@@ -13,11 +13,7 @@ The sort only swaps adjacent, unequal elements so the order of equal elements ar
 
 \- Worst-case Time Complexity of O(n^2) Comparison and O(n^2) Swapping:
 
-This case happens when the list is sorted in the reversed direction and thus all loops of inserting have the first element on the unsorted swapped until it reachs the end of the sorted side. This leads to n loops of inserting, with each loop having n comparisons and n swappings of adjacent element's pair.
-
-\- Best-case Time Complexity of O(n) Comparison and O(1) Swapping:
-
-This case happens when the list is sorted in the reversed direction and thus all loops of inserting stop at their first comparison. This leads to n loops of inserting, with each loop having only 1 comparison and 0 swapping of adjacent element's pair.
+The case happens when the list is sorted in the reversed direction, and thus all loops of building the sorted side have the first element on the unsorted swapped until it reachs the start of the sorted side. This leads to n loops of building the sorted side, with each loop having n comparisons and n swappings of adjacent element's pair.
 
 \- Implementation in Python:
 
@@ -26,7 +22,7 @@ def swap(elements, index_1, index_2):
     elements[index_1], elements[index_2] = elements[index_2], elements[index_1]
 
 def insertion_sort(elements):
-    # loop of inserting
+    # loop of building the sorted side
     for i in range(len(elements)):
         for index in reversed(range(i)):
             if elements[index+1] < elements[index]:
