@@ -1,4 +1,3 @@
-Category: Algorithm
 Tags: Python
 
 The idea of selection sort is selecting the largest/smallest element and swap it with the first element on the unsorted side on the list. In other words, it appends the correct element from the unsorted side to the sorted side. The sort repeats this until no element is left on the unsorted side.

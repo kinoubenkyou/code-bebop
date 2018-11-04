@@ -1,4 +1,3 @@
-Category: Algorithm
 Tags: Python
 
 The idea bubble sort is comparing each pair of adjacent elements and swapping them if they are in the wrong order. This does not only ultimately prepends the largest/smallest element to the sorted side, but also partially moves other elements toward their correct position. The sort repeats this until no element is left on the unsorted side.
