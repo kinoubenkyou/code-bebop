@@ -1,32 +1,33 @@
 Tags: Python
 
-The idea bubble sort is comparing each pair of adjacent elements and swapping them if they are in the wrong order. This does not only ultimately prepends the largest/smallest element to the sorted side, but also partially moves other elements toward their correct position. The sort repeats this until no element is left on the unsorted side.
+The idea of bubble sort is comparing each each pair of adjacent elements on the unsorted side of the list and swapping them if they are in the wrong order. The sort repeats this, each time reducing the unsorted side by 1 element, until no element is left on the unsorted side.
 
-\- Space Complexity of O(1):
+Each loop moves the largest element on the unsorted side, one by one element, to the sorted side. It also partially moves other elements toward the sorted side.
 
-The sort is in-place, which means only swapping elements in the list.
+- Space Complexity of O(1):
 
-\- Stability:
+No additional list is used.
 
-The sort only swaps adjacent, unequal elements so the order of equal elements are not broken.
+- Stability:
 
-\- Worst-case Time Complexity of O(n^2) Comparison and O(n^2) Swapping:
+The sort only swaps adjacent, unequal elements so the relative order of equal elements are not broken.
 
-This case happens when the list is sorted in the reversed direction and thus all loops of swapping round have every pair of adjacent elements swapped. This leads to n loops of swapping round, with each loop having n comparisons and n swappings of adjacent element's pair.
+- Worst-case Time Complexity of O(n^2) Comparison and O(n^2) Swapping:
 
-\- Implementation in Python:
+In the worst case, the sort has n loops, with each loop having n-depended comparisions and n-depended swappings.
+
+- Implementation in Python:
 
 ```python
 def swap(elements, index_1, index_2):
     elements[index_1], elements[index_2] = elements[index_2], elements[index_1]
 
 def bubble_sort(elements):
-    # loop of swapping round
     for i in range(len(elements)):
         did_swap = False
-        for index in reversed(range(i+1, len(elements))):
-            if elements[index] < elements[index-1]:
-                swap(elements, index, index-1)
+        for index in range(len(elements) - 2 - i):
+            if elements[index] > elements[index+1]:
+                swap(elements, index, index+1)
                 did_swap = True
 
         if not did_swap:

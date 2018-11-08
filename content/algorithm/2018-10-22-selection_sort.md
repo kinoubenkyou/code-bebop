@@ -1,36 +1,38 @@
-Tags: Python
+Tags: Python 
 
-The idea of selection sort is selecting the largest/smallest element and swap it with the first element on the unsorted side on the list. In other words, it appends the correct element from the unsorted side to the sorted side. The sort repeats this until no element is left on the unsorted side.
+The idea of selection sort is finding the smallest element on the unsorted side of the list and swap it with the first element on the unsorted side. The sort repeats this, each time reducing the unsorted side by 1 element, until all elements are swapped.
 
-\- Space Complexity of O(1):
+Each loop actually finds and appends the smallest element on the unsorted to the sorted side.
 
-The sort is in-place, which means only swapping elements in the list.
+- Space Complexity of O(1):
 
-\- Non-stability:
+No additional list is used.
 
-When swapping the first element on the unsorted side, the element's order relative to its other equal elements might be broken.
+- Non-stability:
 
-\- Worst-case Time Complexity of O(n^2) Comparison and O(n) Swapping:
+When swapping, selection sort breaks the relative order between equal elements.
 
-The sort always has n loops of building the sorted side, with each loop always has n comparisons to select the largest/smallest element. The case happens when each loop has 1 swapping.
+- Worst-case Time Complexity of O(n^2) Comparison and O(n) Swapping:
 
-\- Implementation in Python:
+In the worst case, the sort has n loops, with each loop having n-depended comparisons and 1 swapping.
+
+- Implementation in Python:
 
 ```python
 def swap(elements, index_1, index_2):
     elements[index_1], elements[index_2] = elements[index_2], elements[index_1]
 
 def selection_sort(elements):
-    # loops of building the sorted side
     for i in range(len(elements)):
-        max_index = i
-        max_element = elements[i]
+        min_index = i
+        min_element = elements[i]
 
-        for index, element in enumerate(elements[i:]):
-            if element < max_element:
-                max_index = i + index
-                max_element = element
+        for index in range(i+1, len(elements)):
+            if elements[index] < min_element:
+                min_index = index
+                min_element = elements[index]
 
-        if max_index != i:
-            swap(elements, max_index, i)
+        if min_index != i:
+            print(min_index, i)
+            swap(elements, min_index, i)
 ```
