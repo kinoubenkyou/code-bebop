@@ -18,10 +18,7 @@ Usage
 Local:
 
 ```shell
-pelican -r
-# on another tab
-cd output
-python3 -m pelican.server
+pelican -lr
 ```
 
 Publish on Github:
