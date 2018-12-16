@@ -1,4 +1,4 @@
-Tags: Python
+Tags: python
 
 The idea of merge sort is merging two sorted sub-lists of equal length into one sorted list. This is done by repeatedly copying the smallest element of the two sub-lists to an additional list until all elements are copied, then copying them back. The sub-lists are sorted themselves through the same merging of their own sub-lists. The smallest sub-lists have only one element.
 

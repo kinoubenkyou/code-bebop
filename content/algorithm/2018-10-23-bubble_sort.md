@@ -1,4 +1,4 @@
-Tags: Python
+Tags: python
 
 The idea of bubble sort is comparing each each pair of adjacent elements on the unsorted side of the list and swapping them if they are in the wrong order. The sort repeats this, each time reducing the unsorted side by 1 element, until no element is left on the unsorted side.
 

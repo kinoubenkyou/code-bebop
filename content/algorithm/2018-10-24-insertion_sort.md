@@ -1,4 +1,4 @@
-Tags: Python
+Tags: python
 
 The idea of insertion sort is moving the first element on the unsorted side, one by one, toward the start of the sorted side, until it is adjacent to a smaller element. The sort repeats this, each time reducing the unsorted side by 1 element, until all elements are moved.
 
