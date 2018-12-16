@@ -1,5 +1,5 @@
-Category: Built-in
-Tags: Python
+Category: built-in
+Tags: python
 
 There are three types of method accessible in a Python class: instance, class and static methods. Consider the following class and its instances:
 

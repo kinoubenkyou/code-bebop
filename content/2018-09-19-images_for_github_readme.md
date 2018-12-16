@@ -1,4 +1,4 @@
-Tags: Git
+Tags: git
 
 The idea is storing images for Github readme file on the repo itself. This can be done by using the relative image path of Github ([more info](https://help.github.com/articles/about-readmes/#relative-links-and-image-paths-in-readme-files)). For example: `![Github Logo](/images/logo.png)`
 
