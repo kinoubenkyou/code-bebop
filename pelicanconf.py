@@ -8,6 +8,7 @@ DELETE_OUTPUT_DIRECTORY = True
 PATH = 'content'
 SITENAME = 'Code Bebop'
 SITEURL = ''
+SUMMARY_MAX_LENGTH = 0
 
 # Time and Date
 TIMEZONE = 'Asia/Ho_Chi_Minh'
