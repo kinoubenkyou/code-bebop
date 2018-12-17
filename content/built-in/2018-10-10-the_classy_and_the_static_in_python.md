@@ -1,5 +1,5 @@
-Category: built-in
 Tags: python
+Status: draft
 
 There are three types of method accessible in a Python class: instance, class and static methods. Consider the following class and its instances:
 

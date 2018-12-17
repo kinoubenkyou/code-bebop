@@ -1,4 +1,5 @@
-Tags: python 
+Tags: python
+Status: draft
 
 The idea of selection sort is finding the smallest element on the unsorted side of the list and swap it with the first element on the unsorted side. The sort repeats this, each time reducing the unsorted side by 1 element, until all elements are swapped.
 

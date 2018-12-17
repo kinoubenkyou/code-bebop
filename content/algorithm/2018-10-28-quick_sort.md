@@ -1,4 +1,5 @@
 Tags: python
+Status: draft
 
 The idea of quick sort is choosing one element as the pivot and divide the others into two lists, one with larger and one with smaller elements than the pivot. This is done by selecting, from the two ends of the list and toward the middle, elements which are on incorrect sides and swapping them, until the two selections meet each others. The sort repeats this until the sub-lists only have one element and cannot be divided anymore.
 
