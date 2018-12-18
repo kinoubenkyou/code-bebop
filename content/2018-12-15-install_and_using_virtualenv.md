@@ -15,7 +15,7 @@ This example is writen based on:
 
 Check if Python and Pip are already installed and can be skipped:
 
-```shell
+```bash
 python3 --version
 sudo apt install python3
 pip3 --version
@@ -24,14 +24,14 @@ sudo apt install python3-pip
 
 Check if virtualenv is installed and can be skipped:
 
-```shell
+```bash
 virtualenv --version
 sudo pip3 install virtualenv
 ```
 
 Create a directory to store all the environments:
 
-```shell
+```bash
 mkdir ~/.virtualenv
 ```
 
@@ -45,7 +45,7 @@ The following steps create an environment for Python 2, install Pelican package 
 
 Create an environment, such as for a project name hello-world, with Python 2:
 
-```shell
+```bash
 cd  ~/.virtualenv/
 mkdir hello-world
 virtualenv -p python2 hello-world
@@ -53,18 +53,18 @@ virtualenv -p python2 hello-world
 
 Switch to the environment:
 
-```shell
+```bash
 source hello-world/bin/activate
 ```
 
 Install a package, such as Pelican, in the environment:
 
-```shell
+```bash
 pip install pelican
 ```
 
 Switch out of the environment:
 
-```shell
+```bash
 deactivate
 ```

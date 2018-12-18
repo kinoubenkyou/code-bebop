@@ -1,25 +1,17 @@
-Tags: git
-Status: draft
+Tags: github
 
-The idea is storing images for Github readme file on the repo itself. This can be done by using the relative image path of Github ([more info](https://help.github.com/articles/about-readmes/#relative-links-and-image-paths-in-readme-files)). For example: `![Github Logo](/images/logo.png)`
+Image for Github readme can be stored right on the repo itself. This can be done through relative link as the file path. For example, link `/images/logo.png` points to image "logo.png" on directory "images" of the repo.
 
-The path in between the `()` is the path of file on the repo itself. Github automatically uses the branch of displayed readme, or in other words, the current branch of the displayed page.
+Images can even be accessed across branches with relative link operand. This allows hiding images in a dedicated branch and using the same images for readme files on all branches. For instance, link `../assets/images/logo.png` accesses the images from branch "assets".
 
-The images can be hidden in another branch but still accessible. To do this, use relative link operand. For example: `../assets/images/logo.png` leads to branch `assets`, directory `images` and then `logo.png` file.
+To create a dedicated branch for images, named "assets" for example:
 
-An example of creating another branch for images is as followed (starts with `images` directory at the root of the repo):
-
-```shell
+```bash
 git checkout --orphan assets
-git rm -rf .
-git add images/
-git commit -m "add images for Github readme"
-git push origin assets
 ```
 
-Remember to remove `images` directory on `master` branch:
+Remember to remove everything from the branch before adding images:
 
-```shell
-git checkout master
-git rm -rf images/
+```bash
+git rm -rf
 ```
