@@ -1,4 +1,4 @@
-Tags: python, virtualenv
+Tags: bash, python, virtualenv
 
 # What is Virtualenv
 
@@ -11,7 +11,7 @@ The tool also does the same for other Python packages, so it ends up creating wh
 This example is writen based on:
 
 - Ubuntu 18.04.1 LTS
-- Python 3.6.7
+- Python 3.6.7 (use for installing virtualenv)
 
 Check if Python and Pip are already installed and can be skipped:
 
@@ -41,7 +41,11 @@ This example is writen based on:
 
 - Virtualenv 16.1.0
 
-The following steps install Pelican package in a Python2 environment:
+Check if Python 2 are already installed and can be skipped:
+```bash
+python2 --version
+sudo apt install python2
+```
 
 Create an environment, such as for a project name hello-world, with Python 2:
 
