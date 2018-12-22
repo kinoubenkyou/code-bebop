@@ -41,7 +41,7 @@ This example is writen based on:
 
 - Virtualenv 16.1.0
 
-The following steps create an environment for Python 2, install Pelican package in it, then leave the environment:
+The following steps install Pelican package in a Python2 environment:
 
 Create an environment, such as for a project name hello-world, with Python 2:
 
