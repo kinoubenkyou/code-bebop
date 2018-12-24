@@ -1,4 +1,4 @@
-Tags: github
+Tags: bash, github
 
 Image for Github readme can be stored right on the repo itself. This can be done through relative link as the file path. For example, link `/images/logo.png` points to image "logo.png" on directory "images" of the repo.
 
