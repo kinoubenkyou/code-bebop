@@ -11,22 +11,12 @@ The tool also does the same for other Python packages, so it ends up creating wh
 This example is writen based on:
 
 - Ubuntu 18.04.1 LTS
-- Python 3.6.7 (use for installing virtualenv)
-
-Check if Python and Pip are already installed and can be skipped:
-
-```bash
-python3 --version
-sudo apt install python3
-pip3 --version
-sudo apt install python3-pip
-```
 
 Check if virtualenv is installed and can be skipped:
 
 ```bash
 virtualenv --version
-sudo pip3 install virtualenv
+sudo apt install virtualenv
 ```
 
 Create a directory to store all the environments:
