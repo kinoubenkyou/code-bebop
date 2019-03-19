@@ -2,9 +2,7 @@ Tags: bash, python, virtualenv
 
 # What is Virtualenv
 
-Virtualenv is a tool for switching Python development environment. For instance, both versions 2.6 and 2.7 of Python are installed, only one of them is put as Python executable (the one called when using command `python` on shell). To switch ther version, the binary in `PATH` can be replaced. Doing this is not very convenient, so virtualenv is created to quickly change `PATH` instead, pointing to another excutable.
-
-The tool also does the same for other Python packages, so it ends up creating whole development environments separated from each others.
+Virtualenv is a tool for switching Python development environment. When an environment is activated, the tools help putting both Python and its packages of a particular version into a separated location, as well as adding this location into `PATH`.
 
 # Installing Virtualenv
 
@@ -37,7 +35,7 @@ python2 --version
 sudo apt install python2
 ```
 
-Create an environment, such as for a project name hello-world, with Python 2:
+Create an environment, named hello-world, with Python 2:
 
 ```bash
 cd  ~/.virtualenv/
