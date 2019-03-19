@@ -32,4 +32,5 @@ DEFAULT_PAGINATION = 4
 DEFAULT_LANG = 'en'
 
 # Theme
+THEME = 'kelican'
 SOCIAL = ()
