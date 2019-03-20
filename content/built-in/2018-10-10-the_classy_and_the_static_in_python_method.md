@@ -3,101 +3,41 @@ Tags: python
 There are three types of method accessible in a Python class: instance, class and static methods. Consider the following class and its instances:
 
 ```python
-class Human:
-    class_v = "homo sapiens"
+class Animal:
+    head = 1
+    tail = 1
 
     @classmethod
-    def class_m(cls):
-        print(cls.class_v)
+    def count_head(cls):
+        print(cls.head)
 
-    def __init__(self, race):
-        self.instance_v = race
+    def __init__(self, leg):
+        self.leg = leg
 
-    def instance_m(self):
-        print(self.instance_v)
-        print(self.class_v)
+    def count_leg(self):
+        print(self.leg)
 
     @staticmethod
-    def static_m():
-        print("human yet not human")
+    def count_tail(cls):
+        print(cls.tail)
 
 
-weeb = Human("weeaboo")
-duck = Human("viet")
+bird = Animal(leg=2)
+dog = Animal(leg=4)
 ```
 
-If instance methods are accessed from their instance, a bound method object is returned.
+Instance and class methods are bounded. When called they automatically get the instance or class passed as the first argument. Thus they can access their class or instance variables respectively.
 
 ```python
-print(weeb.instance_m)
-# <bound method Human.instance_m of <__main__.Human object at 0x7f6cec860320>>
+Animal.count_head()  # 1
+bird.count_leg()  # 2
+dog.count_leg()  # 4
 ```
 
-Bound methods implicitly get the bounded object passed as its first argument, and can be omitted when calling.
+Static method is similar to class method, except it isn't bounded and cannot access the class or instance variables. However, static method use less memory as Python doesn't have to reinitialize the method.
 
 ```python
-weeb.instance_m()
-# weeaboo
-# homo sapiens
+Animal.count_tail()  # TypeError: count_tail() takes exactly 1 argument (0 given)
+print(Animal.count_head is Animal.count_head)  # False
+print(Animal.count_tail is Animal.count_tail)  # True
 ```
-
-If instance methods are accessed from their class, an unbound method is returned instead.
-
-```python
-print(Human.instance_m)
-# <function Human.instance_m at 0x7f6cec85f620>
-```
-
-If instance methods are called from their class, an error regarding the implicit first argument is thrown.
-
-```python
-Human.instance_m()
-# TypeError: instance_m() missing 1 required positional argument: 'self'
-```
-
-Class methods, on the other hand, are bounded to a class.
-
-```python
-print(Human.class_m)
-# <bound method Human.class_m of <class '__main__.Human'>>
-```
-
-Class methods can be accessed from both the instances and the class.
-
-```python
-print(weeb.class_m)
-# <bound method Human.class_m of <class '__main__.Human'>>
-print(duck.class_m)
-# <bound method Human.class_m of <class '__main__.Human'>>
-```
-
-Therefore, they can also be called from both and return the same result.
-
-```python
-weeb.class_m()
-# homo sapiens
-duck.class_m()
-# homo sapiens
-Human.class_m()
-# homo sapiens
-```
-
-Finally, static methods are not bounded to anything, yet they can be accessed from both the instances and the class, just like class methods.
-
-```python
-print(weeb.static_m)
-# <function Human.static_m at 0x7f6cec85f6a8>
-print(Human.static_m)
-# <function Human.static_m at 0x7f6cec85f6a8>
-```
-
-Therefore, static methods can also be called from both and return the same result.
-
-```python
-weeb.static_m()
-# human yet not human
-Human.static_m()
-# human yet not human
-```
-
-Since static methods are not bounded to anything, they cannot access both instance and class variables, and thus, have their usage is the same as global functions. Such type of method seems redundant, but is still useful for functions related to a class semantically, yet not accessing any instance or class variable.
