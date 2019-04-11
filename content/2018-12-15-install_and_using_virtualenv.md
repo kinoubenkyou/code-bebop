@@ -1,4 +1,4 @@
-Tags: bash, python, virtualenv
+Tags: bash, virtualenv
 
 # What is Virtualenv
 
