@@ -4,7 +4,7 @@ Tags: bash, virtualenv
 
 Virtualenv is a tool for switching Python development environment. When an environment is activated, the tools help putting both Python and its packages of a particular version into a separated location, as well as adding this location into `PATH`.
 
-# Installing Virtualenv
+# Install Virtualenv
 
 This example is writen based on:
 
@@ -23,7 +23,7 @@ Create a directory to store all the environments:
 mkdir ~/.virtualenv
 ```
 
-# Using Virtualenv
+# Use Virtualenv
 
 This example is writen based on:
 
