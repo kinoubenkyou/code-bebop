@@ -1,21 +1,22 @@
-Tags: python
-Status: draft
+Tags: python, algorithm
 
-The idea of merge sort is merging two sorted sub-lists of equal length into one sorted list. This is done by repeatedly copying the smallest element of the two sub-lists to an additional list until all elements are copied, then copying them back. The sub-lists are sorted themselves through the same merging of their own sub-lists. The smallest sub-lists have only one element.
+# Brief
 
-- Space Complexity of O(n):
+Merge sort merges two sorted sub-lists of equal length into one sorted list. This is done by repeatedly copying the smallest element among the two sub-lists to an additional list until all elements are copied, then copying them back. The sub-lists are sorted themselves through the same merging of their own sub-lists. The smallest sub-lists have only one element.
+
+# Space Complexity of O(n):
 
 Merge sort uses additional list to store the result of the merging before copying them back, thus using a list with length of n in the last merging.
 
-- Stability:
+# Stability:
 
-When merging equal elements are copied in their relative order.
+When merging, equal elements are copied in their relative order.
 
-- Worst-case Time Complexity of O(nlogn) Comparison and O(nlogn) Swapping:
+# Worst-case Time Complexity of O(nlogn) Comparison and O(nlogn) Swapping:
 
 In the worst case, the sort has logn recursions, with each recursion has both sub-lists take turn in having their elements copied. Thus, each recursion has n-depended comparisions and n-depended copyings.
 
-- Implementation in Python:
+# Implementation in Python:
 
 ```python
 def swap(elements, index_1, index_2):

@@ -1,23 +1,24 @@
-Tags: python
-Status: draft
+Tags: python, algorithm
 
-The idea of insertion sort is moving the first element on the unsorted side, one by one, toward the start of the sorted side, until it is adjacent to a smaller element. The sort repeats this, each time reducing the unsorted side by 1 element, until all elements are moved.
+# Brief
+
+Insertion sort moves the starting element of the unsorted side, one by one, toward the start of the list, until it is adjacent to a smaller element. The sort repeats this, each time reducing the unsorted side by 1 element at the start, until all elements are moved.
 
 Each loop actually moves an element on the unsorted side to its correct position on the sorted side.
 
-- Space Complexity of O(1):
+# Space Complexity of O(1):
 
 No additional list is used.
 
-- Stability:
+# Stability:
 
 The sort only swaps adjacent, unequal elements so the relative order of equal elements are not broken.
 
-- Worst-case Time Complexity of O(n^2) Comparison and O(n^2) Swapping:
+# Worst-case Time Complexity of O(n^2) Comparison and O(n^2) Swapping:
 
 In the worst case, the sort has n loops, with each loop having n-depended comparisons and n-depended swappings.
 
-- Implementation in Python:
+# Implementation in Python:
 
 ```python
 def swap(elements, index_1, index_2):
