@@ -30,12 +30,13 @@ This example is writen based on:
 - Virtualenv 16.1.0
 
 Check if Python 2 are already installed and can be skipped:
+
 ```bash
 python2 --version
 sudo apt install python2
 ```
 
-Create an environment, named hello-world, with Python 2:
+Create an environment, named hello-world for example, with Python 2:
 
 ```bash
 cd  ~/.virtualenv/
@@ -43,7 +44,7 @@ mkdir hello-world
 virtualenv -p python2 hello-world
 ```
 
-Switch to the environment:
+Switch to the environment, the command line will be prepended with `(hello-world)`:
 
 ```bash
 source hello-world/bin/activate

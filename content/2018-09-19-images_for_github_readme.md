@@ -1,17 +1,54 @@
-Tags: bash, github
+Tags: bash, git, github
 
-Image for Github readme can be stored right on the repo itself. This can be done through relative link as the file path. For example, link `/images/logo.png` points to image "logo.png" on directory "images" of the repo.
+Images stored on Github repo can be accessed from the rendered readme. This is convenient, but be aware of the repo size limit of Github. The images can be stored on a dedicated branch, which might help to avoid dangling image files in git history when they are not needed anymore. The idea is deleting the old branch and then creating a brand new one.
 
-Images can even be accessed across branches with relative link operand. This allows hiding images in a dedicated branch and using the same images for readme files on all branches. For instance, link `../assets/images/logo.png` accesses the images from branch "assets".
+This example is writen based on:
 
-To create a dedicated branch for images, named "assets" for example:
+- Git 2.17.1
+
+Create an empty branch, named "assets" for example:
 
 ```bash
 git checkout --orphan assets
 ```
 
-Remember to remove everything from the branch before adding images:
+Remove all files in working tree and index (this means losing your current work if you haven't commit them to other branches):
 
 ```bash
-git rm -rf
+git rm -rf .
+```
+
+Create a diretory for images and copy them into it:
+
+```bash
+mkdir images
+cp /path/of/the/image.png ./images
+```
+
+Commit and push the branch to Github:
+
+```bash
+git add -A
+git commit -m "add image"
+git push origin assets
+```
+
+Switch to the branch you want its readme to render the file, probably branch master:
+
+```bash
+git checkout master
+```
+
+Add the image with file path as relative link in readme:
+
+```markdown
+![](../assets/images/image.png)
+```
+
+Commit and push the new readme to Github:
+
+```bash
+git add -A
+git commit -m "add image to readme"
+git push origin master
 ```
