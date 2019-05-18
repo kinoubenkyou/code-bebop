@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Selection Sort</title>
+        <link rel="stylesheet" href="./theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <aside class="side-bar">
+            <ul>
+                <li><a href="./">Code Bebop</a></li>
+
+<li><br></li>
+                        <li class="active">
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+
+
+        </ul>
+	<div class="credit">
+	    <p>Built with <a href="https://github.com/getpelican/pelican">Pelican</a> and <a href="https://github.com/kinoubenkyou/kelican">original theme</a>.</p>
+	</div>
+        </aside>
+
+    <section class="main">
+        <article class="post">
+            <div class="title"><a href="#">Selection Sort</a></div>
+            <p>
+		22 Oct 2018
+		    | <a href="./category/misc.html">Misc</a>
+                    |
+                        <a href="./tag/python.html">Python</a>,                         <a href="./tag/algorithm.html">Algorithm</a>	    </p>
+            <div class="content">
+                <p><h1>Idea</h1>
+<p>Selection sort finds the smallest element on the unsorted side of the list and swap it with the starting element on the unsorted side. The sort repeats this, each time reducing the unsorted side by 1 element at the start, until all elements are swapped.</p>
+<p>Each loop actually finds and appends the smallest element from the unsorted to the sorted side.</p>
+<h1>Space Complexity of O(1):</h1>
+<p>No additional list is used.</p>
+<h1>Non-stability:</h1>
+<p>When swapping, selection sort might break the relative order between the first element on the unsorted side and its other equal elements.</p>
+<h1>Worst-case Time Complexity of O(n^2) Comparison and O(n) Swapping:</h1>
+<p>In the worst case, the sort has n loops, with each loop having n-depended comparisons and 1 swapping.</p>
+<h1>Implementation in Python:</h1>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">swap</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">index_1</span><span class="p">,</span> <span class="n">index_2</span><span class="p">):</span>
+    <span class="n">elements</span><span class="p">[</span><span class="n">index_1</span><span class="p">],</span> <span class="n">elements</span><span class="p">[</span><span class="n">index_2</span><span class="p">]</span> <span class="o">=</span> <span class="n">elements</span><span class="p">[</span><span class="n">index_2</span><span class="p">],</span> <span class="n">elements</span><span class="p">[</span><span class="n">index_1</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">selection_sort</span><span class="p">(</span><span class="n">elements</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">)):</span>
+        <span class="n">min_index</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="n">min_element</span> <span class="o">=</span> <span class="n">elements</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">elements</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">min_element</span><span class="p">:</span>
+                <span class="n">min_index</span> <span class="o">=</span> <span class="n">index</span>
+                <span class="n">min_element</span> <span class="o">=</span> <span class="n">elements</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">min_index</span> <span class="o">!=</span> <span class="n">i</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">min_index</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+            <span class="n">swap</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">min_index</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</pre></div></p>
+            </div>
+        </article>
+    </section>
+    </body>
+</html>

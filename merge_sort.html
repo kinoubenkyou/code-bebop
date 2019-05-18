@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Merge Sort</title>
+        <link rel="stylesheet" href="./theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <aside class="side-bar">
+            <ul>
+                <li><a href="./">Code Bebop</a></li>
+
+<li><br></li>
+                        <li class="active">
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+
+
+        </ul>
+	<div class="credit">
+	    <p>Built with <a href="https://github.com/getpelican/pelican">Pelican</a> and <a href="https://github.com/kinoubenkyou/kelican">original theme</a>.</p>
+	</div>
+        </aside>
+
+    <section class="main">
+        <article class="post">
+            <div class="title"><a href="#">Merge Sort</a></div>
+            <p>
+		04 Nov 2018
+		    | <a href="./category/misc.html">Misc</a>
+                    |
+                        <a href="./tag/python.html">Python</a>,                         <a href="./tag/algorithm.html">Algorithm</a>	    </p>
+            <div class="content">
+                <p><h1>Brief</h1>
+<p>Merge sort merges two sorted sub-lists of equal length into one sorted list. This is done by repeatedly copying the smallest element among the two sub-lists to an additional list until all elements are copied, then copying them back. The sub-lists are sorted themselves through the same merging of their own sub-lists. The smallest sub-lists have only one element.</p>
+<h1>Space Complexity of O(n):</h1>
+<p>Merge sort uses additional list to store the result of the merging before copying them back, thus using a list with length of n in the last merging.</p>
+<h1>Stability:</h1>
+<p>When merging, equal elements are copied in their relative order.</p>
+<h1>Worst-case Time Complexity of O(nlogn) Comparison and O(nlogn) Swapping:</h1>
+<p>In the worst case, the sort has logn recursions, with each recursion has both sub-lists take turn in having their elements copied. Thus, each recursion has n-depended comparisions and n-depended copyings.</p>
+<h1>Implementation in Python:</h1>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">swap</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">index_1</span><span class="p">,</span> <span class="n">index_2</span><span class="p">):</span>
+    <span class="n">elements</span><span class="p">[</span><span class="n">index_1</span><span class="p">],</span> <span class="n">elements</span><span class="p">[</span><span class="n">index_2</span><span class="p">]</span> <span class="o">=</span> <span class="n">elements</span><span class="p">[</span><span class="n">index_2</span><span class="p">],</span> <span class="n">elements</span><span class="p">[</span><span class="n">index_1</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">merge_sort</span><span class="p">(</span><span class="n">elements</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">recurse</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">start_index</span><span class="p">,</span> <span class="n">end_index</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">end_index</span> <span class="o">-</span> <span class="n">start_index</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">sep_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">end_index</span> <span class="o">-</span> <span class="n">start_index</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">start_index</span>
+            <span class="n">recurse</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">start_index</span><span class="p">,</span> <span class="n">sep_index</span><span class="p">)</span>
+            <span class="n">recurse</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">sep_index</span><span class="p">,</span> <span class="n">end_index</span><span class="p">)</span>
+            <span class="n">merge</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">start_index</span><span class="p">,</span> <span class="n">end_index</span><span class="p">,</span> <span class="n">sep_index</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">start_index</span><span class="p">,</span> <span class="n">end_index</span><span class="p">,</span> <span class="n">sep_index</span><span class="p">):</span>
+        <span class="n">left_i</span> <span class="o">=</span> <span class="n">start_index</span>
+        <span class="n">right_i</span> <span class="o">=</span> <span class="n">sep_index</span>
+        <span class="n">merged_elements</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">left_i</span> <span class="o">&gt;=</span> <span class="n">sep_index</span><span class="p">:</span>
+                <span class="n">merged_elements</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">elements</span><span class="p">[</span><span class="n">right_i</span><span class="p">:</span><span class="n">end_index</span><span class="p">])</span>
+                <span class="k">break</span>
+            <span class="k">if</span> <span class="n">right_i</span> <span class="o">&gt;=</span> <span class="n">end_index</span><span class="p">:</span>
+                <span class="n">merged_elements</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">elements</span><span class="p">[</span><span class="n">left_i</span><span class="p">:</span><span class="n">sep_index</span><span class="p">])</span>
+                <span class="k">break</span>
+
+            <span class="k">if</span> <span class="n">elements</span><span class="p">[</span><span class="n">left_i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">elements</span><span class="p">[</span><span class="n">right_i</span><span class="p">]:</span>
+                <span class="n">merged_elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elements</span><span class="p">[</span><span class="n">right_i</span><span class="p">])</span>
+                <span class="n">right_i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">merged_elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elements</span><span class="p">[</span><span class="n">left_i</span><span class="p">])</span>
+                <span class="n">left_i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">elements</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">end_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged_elements</span>
+
+    <span class="n">recurse</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">))</span>
+</pre></div></p>
+            </div>
+        </article>
+    </section>
+    </body>
+</html>

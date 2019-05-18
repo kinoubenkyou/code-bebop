@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Heap Sort</title>
+        <link rel="stylesheet" href="./theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <aside class="side-bar">
+            <ul>
+                <li><a href="./">Code Bebop</a></li>
+
+<li><br></li>
+                        <li class="active">
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+
+
+        </ul>
+	<div class="credit">
+	    <p>Built with <a href="https://github.com/getpelican/pelican">Pelican</a> and <a href="https://github.com/kinoubenkyou/kelican">original theme</a>.</p>
+	</div>
+        </aside>
+
+    <section class="main">
+        <article class="post">
+            <div class="title"><a href="#">Heap Sort</a></div>
+            <p>
+		30 Oct 2018
+		    | <a href="./category/misc.html">Misc</a>
+                    |
+                        <a href="./tag/python.html">Python</a>,                         <a href="./tag/algorithm.html">Algorithm</a>	    </p>
+            <div class="content">
+                <p><h1>Brief</h1>
+<p>Heap sort first turns the list into a heap, then swaps the root with the last leaf to prepend the sorted side, as well as sifting down the new root to maintain the heap condition. The sort repeats this, each time reducing the length of the heap by one element, until the heap is empty.</p>
+<h1>Space Complexity of O(1):</h1>
+<p>No additional list is used.</p>
+<h1>Non-stability:</h1>
+<p>When swapping the leaf or sifting down the new root, the element's order relative to its other equal elements might be broken.</p>
+<h1>Worst-case Time Complexity of O(nlogn) Comparison and O(nlogn) Swapping:</h1>
+<p>In the worst case, the sort has n loops, with each loop having logn-depended comparisons and logn-depended swappings.</p>
+<h1>Implementation in Python:</h1>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">swap</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">index_1</span><span class="p">,</span> <span class="n">index_2</span><span class="p">):</span>
+    <span class="n">elements</span><span class="p">[</span><span class="n">index_1</span><span class="p">],</span> <span class="n">elements</span><span class="p">[</span><span class="n">index_2</span><span class="p">]</span> <span class="o">=</span> <span class="n">elements</span><span class="p">[</span><span class="n">index_2</span><span class="p">],</span> <span class="n">elements</span><span class="p">[</span><span class="n">index_1</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">sift_down</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">end_index</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">end_index</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">end_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">left_i</span> <span class="o">=</span> <span class="n">index</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">right_i</span> <span class="o">=</span> <span class="n">index</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">right_i</span> <span class="o">&lt;</span> <span class="n">end_index</span> <span class="ow">and</span>
+                <span class="n">elements</span><span class="p">[</span><span class="n">right_i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">elements</span><span class="p">[</span><span class="n">left_i</span><span class="p">]</span> <span class="ow">and</span>
+                <span class="n">elements</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="p">[</span><span class="n">right_i</span><span class="p">]):</span>
+            <span class="n">swap</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">right_i</span><span class="p">)</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">right_i</span>
+        <span class="k">elif</span> <span class="n">left_i</span> <span class="o">&lt;</span> <span class="n">end_index</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">elements</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="p">[</span><span class="n">left_i</span><span class="p">]:</span>
+                <span class="n">swap</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">left_i</span><span class="p">)</span>
+                <span class="n">index</span> <span class="o">=</span> <span class="n">left_i</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+
+<span class="k">def</span> <span class="nf">heapify</span><span class="p">(</span><span class="n">elements</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)):</span>
+        <span class="n">sift_down</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">heap_sort</span><span class="p">(</span><span class="n">elements</span><span class="p">):</span>
+    <span class="n">heapify</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">))):</span>
+        <span class="n">swap</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">sift_down</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</pre></div></p>
+            </div>
+        </article>
+    </section>
+    </body>
+</html>

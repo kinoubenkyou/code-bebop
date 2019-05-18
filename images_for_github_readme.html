@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Images For Github Readme</title>
+        <link rel="stylesheet" href="./theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <aside class="side-bar">
+            <ul>
+                <li><a href="./">Code Bebop</a></li>
+
+<li><br></li>
+                        <li class="active">
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+
+
+        </ul>
+	<div class="credit">
+	    <p>Built with <a href="https://github.com/getpelican/pelican">Pelican</a> and <a href="https://github.com/kinoubenkyou/kelican">original theme</a>.</p>
+	</div>
+        </aside>
+
+    <section class="main">
+        <article class="post">
+            <div class="title"><a href="#">Images For Github Readme</a></div>
+            <p>
+		19 Sep 2018
+		    | <a href="./category/misc.html">Misc</a>
+                    |
+                        <a href="./tag/bash.html">Bash</a>,                         <a href="./tag/git.html">Git</a>,                         <a href="./tag/github.html">Github</a>	    </p>
+            <div class="content">
+                <p><p>Images stored on Github repo can be accessed from the rendered readme. This is convenient, but be aware of the repo size limit of Github. The images can be stored on a dedicated branch, which might help to avoid dangling image files in git history when they are not needed anymore. The idea is deleting the old branch and then creating a brand new one.</p>
+<p>This example is writen based on:</p>
+<ul>
+<li>Git 2.17.1</li>
+</ul>
+<p>Create an empty branch, named "assets" for example:</p>
+<div class="highlight"><pre><span></span>git checkout --orphan assets
+</pre></div>
+
+
+<p>Remove all files in working tree and index (this means losing your current work if you haven't commit them to other branches):</p>
+<div class="highlight"><pre><span></span>git rm -rf .
+</pre></div>
+
+
+<p>Create a diretory for images and copy them into it:</p>
+<div class="highlight"><pre><span></span>mkdir images
+cp /path/of/the/image.png ./images
+</pre></div>
+
+
+<p>Commit and push the branch to Github:</p>
+<div class="highlight"><pre><span></span>git add -A
+git commit -m <span class="s2">&quot;add image&quot;</span>
+git push origin assets
+</pre></div>
+
+
+<p>Switch to the branch you want its readme to render the file, probably branch master:</p>
+<div class="highlight"><pre><span></span>git checkout master
+</pre></div>
+
+
+<p>Add the image with file path as relative link in readme:</p>
+<div class="highlight"><pre><span></span><span class="o">!</span><span class="p">[](..</span><span class="o">/</span><span class="n">assets</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">image</span><span class="p">.</span><span class="n">png</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Commit and push the new readme to Github:</p>
+<div class="highlight"><pre><span></span>git add -A
+git commit -m <span class="s2">&quot;add image to readme&quot;</span>
+git push origin master
+</pre></div></p>
+            </div>
+        </article>
+    </section>
+    </body>
+</html>

@@ -1,0 +1,121 @@
+@import url('pygment.css');
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+body {
+  background-color: black;
+  color: #ccc;
+  font-family: 'VT323', monospace;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #cc0;
+  font-weight: inherit;
+}
+
+p {
+  margin: 1em 0;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+ul {
+  padding-left: 1.6em;
+  margin: 0.8em 0;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code {
+  background-color: #333;
+  display: inline-block;
+  font-family: inherit;
+  padding: 0 0.4em;
+}
+
+.highlight {
+  background-color: #333;
+  margin: 0.8em 1.6em;
+  padding: 0.8em 1.6em;
+}
+
+.highlight pre {
+  word-break: break-all;
+  font-family: 'VT323', monospace;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.side-bar {
+  border-left: 0.4em solid;
+  bottom: 0;
+  padding: 1.6em;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 8em;
+}
+
+.side-bar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-bar li {
+  color: #cc0;
+}
+
+.side-bar .credit {
+  bottom: 0;
+  padding-bottom: inherit;
+  padding-right: inherit;
+  position: absolute;
+}
+
+.side-bar .credit a {
+  color: #cc0;
+}
+
+.main {
+  margin-right: 11.6em;
+  padding: 1.6em 3.2em;
+}
+
+.post {
+  margin-bottom: 3.2em;
+}
+
+.post .title {
+  color: #cc0;
+  font-size: 2em;
+  margin: 0;
+}
+
+.post .article-info {
+  margin-top: 0;
+}
+
+.post .summary a {
+  color: #cc0;
+}
+
+.post .content a {
+  color: #cc0;
+}
+
+.main__pagination {
+  text-align: right;
+}
+
+.paginator {
+  margin-bottom: 0;
+}

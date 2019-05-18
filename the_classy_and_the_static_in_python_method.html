@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>The Classy And The Static In Python Method</title>
+        <link rel="stylesheet" href="./theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <aside class="side-bar">
+            <ul>
+                <li><a href="./">Code Bebop</a></li>
+
+<li><br></li>
+                        <li class="active">
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+
+
+        </ul>
+	<div class="credit">
+	    <p>Built with <a href="https://github.com/getpelican/pelican">Pelican</a> and <a href="https://github.com/kinoubenkyou/kelican">original theme</a>.</p>
+	</div>
+        </aside>
+
+    <section class="main">
+        <article class="post">
+            <div class="title"><a href="#">The Classy And The Static In Python Method</a></div>
+            <p>
+		10 Oct 2018
+		    | <a href="./category/misc.html">Misc</a>
+                    |
+                        <a href="./tag/python.html">Python</a>	    </p>
+            <div class="content">
+                <p><p>There are three types of method accessible in a Python class: instance, class and static methods. Consider the following class and its instances:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="n">head</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">tail</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">count_head</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">head</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">leg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">leg</span> <span class="o">=</span> <span class="n">leg</span>
+
+    <span class="k">def</span> <span class="nf">count_leg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">leg</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">count_tail</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">tail</span><span class="p">)</span>
+
+
+<span class="n">bird</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="n">leg</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">dog</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="n">leg</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Instance and class methods are bounded. When called they automatically get the instance or class passed as the first argument. Thus they can access their class or instance variables respectively.</p>
+<div class="highlight"><pre><span></span><span class="n">Animal</span><span class="o">.</span><span class="n">count_head</span><span class="p">()</span>  <span class="c1"># 1</span>
+<span class="n">bird</span><span class="o">.</span><span class="n">count_leg</span><span class="p">()</span>  <span class="c1"># 2</span>
+<span class="n">dog</span><span class="o">.</span><span class="n">count_leg</span><span class="p">()</span>  <span class="c1"># 4</span>
+</pre></div>
+
+
+<p>Static method is similar to class method, except it isn't bounded and cannot access the class or instance variables. However, static method use less memory as Python doesn't have to reinitialize the method.</p>
+<div class="highlight"><pre><span></span><span class="n">Animal</span><span class="o">.</span><span class="n">count_tail</span><span class="p">()</span>  <span class="c1"># TypeError: count_tail() takes exactly 1 argument (0 given)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">Animal</span><span class="o">.</span><span class="n">count_head</span> <span class="ow">is</span> <span class="n">Animal</span><span class="o">.</span><span class="n">count_head</span><span class="p">)</span>  <span class="c1"># False</span>
+<span class="k">print</span><span class="p">(</span><span class="n">Animal</span><span class="o">.</span><span class="n">count_tail</span> <span class="ow">is</span> <span class="n">Animal</span><span class="o">.</span><span class="n">count_tail</span><span class="p">)</span>  <span class="c1"># True</span>
+</pre></div></p>
+            </div>
+        </article>
+    </section>
+    </body>
+</html>

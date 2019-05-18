@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Quick Sort</title>
+        <link rel="stylesheet" href="./theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <aside class="side-bar">
+            <ul>
+                <li><a href="./">Code Bebop</a></li>
+
+<li><br></li>
+                        <li class="active">
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+
+
+        </ul>
+	<div class="credit">
+	    <p>Built with <a href="https://github.com/getpelican/pelican">Pelican</a> and <a href="https://github.com/kinoubenkyou/kelican">original theme</a>.</p>
+	</div>
+        </aside>
+
+    <section class="main">
+        <article class="post">
+            <div class="title"><a href="#">Quick Sort</a></div>
+            <p>
+		28 Oct 2018
+		    | <a href="./category/misc.html">Misc</a>
+                    |
+                        <a href="./tag/python.html">Python</a>,                         <a href="./tag/algorithm.html">Algorithm</a>	    </p>
+            <div class="content">
+                <p><h1>Brief</h1>
+<p>Quick sort chooses one element as the pivot and separates the others into two lists, one with larger and one with smaller elements than the pivot. This is done by, from the two ends of the list toward the middle, selecting elements which are on incorrect sides and swapping them, until the two selections meet each others. The sort repeats this on the two sub-lists until the they only have one element and cannot be divided anymore.</p>
+<h1>Space Complexity of O(1):</h1>
+<p>No additional list is used.</p>
+<h1>Non-stability:</h1>
+<p>When swapping elements to divide them into sub-lists, equal elements on the same incorrect side are reversed in order after being swapped, as the selection move from the two ends of the list toward the middle.</p>
+<h1>Worst-case Time Complexity of O(n^2) Comparison and O(n^2) Swapping:</h1>
+<p>In the worst case, the sort has n recursions since each recursion having the largest/smallest element as the pivot and the rest are on their incorrect side. Thus, each recursion has n-depended comparisons and n-depended swappings.</p>
+<h1>Implementation in Python:</h1>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">swap</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">index_1</span><span class="p">,</span> <span class="n">index_2</span><span class="p">):</span>
+    <span class="n">elements</span><span class="p">[</span><span class="n">index_1</span><span class="p">],</span> <span class="n">elements</span><span class="p">[</span><span class="n">index_2</span><span class="p">]</span> <span class="o">=</span> <span class="n">elements</span><span class="p">[</span><span class="n">index_2</span><span class="p">],</span> <span class="n">elements</span><span class="p">[</span><span class="n">index_1</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">quick_sort</span><span class="p">(</span><span class="n">elements</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">recurse</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">start_index</span><span class="p">,</span> <span class="n">end_index</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">start_index</span> <span class="o">&lt;</span> <span class="n">end_index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">pivot_index</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">start_index</span><span class="p">,</span> <span class="n">end_index</span><span class="p">)</span>
+            <span class="n">recurse</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">start_index</span><span class="p">,</span> <span class="n">pivot_index</span><span class="p">)</span>
+            <span class="n">recurse</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">pivot_index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">end_index</span><span class="p">)</span>
+
+    <span class="c1"># dividing</span>
+    <span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">start_index</span><span class="p">,</span> <span class="n">end_index</span><span class="p">):</span>
+        <span class="n">pivot</span> <span class="o">=</span> <span class="n">elements</span><span class="p">[</span><span class="n">start_index</span><span class="p">]</span>
+        <span class="n">left_i</span> <span class="o">=</span> <span class="n">start_index</span>
+        <span class="n">right_i</span> <span class="o">=</span> <span class="n">end_index</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="k">while</span> <span class="n">elements</span><span class="p">[</span><span class="n">left_i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">pivot</span><span class="p">:</span>
+                <span class="n">left_i</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">left_i</span> <span class="o">==</span> <span class="n">end_index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="k">break</span>
+
+            <span class="k">while</span> <span class="n">elements</span><span class="p">[</span><span class="n">right_i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">pivot</span><span class="p">:</span>
+                <span class="n">right_i</span> <span class="o">-=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">right_i</span> <span class="o">==</span> <span class="n">start_index</span><span class="p">:</span>
+                    <span class="k">break</span>
+
+            <span class="k">if</span> <span class="n">left_i</span> <span class="o">&gt;=</span> <span class="n">right_i</span><span class="p">:</span>
+                <span class="n">swap</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">start_index</span><span class="p">,</span> <span class="n">right_i</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">right_i</span>
+
+            <span class="n">swap</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="n">left_i</span><span class="p">,</span> <span class="n">right_i</span><span class="p">)</span>
+
+    <span class="n">recurse</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">))</span>
+</pre></div></p>
+            </div>
+        </article>
+    </section>
+    </body>
+</html>
