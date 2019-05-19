@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Liskob Substitution Principle</title>
+        <link rel="stylesheet" href="./theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <aside class="side-bar">
+            <ul>
+                <li><a href="./">Code Bebop</a></li>
+
+<li><br></li>
+                        <li>
+                            <a href="./category/dev-ops.html">Dev-Ops</a>
+                        </li>
+                        <li class="active">
+                            <a href="./category/general.html">General</a>
+                        </li>
+                        <li>
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+
+
+        </ul>
+	<div class="credit">
+	    <p>Built with <a href="https://github.com/getpelican/pelican">Pelican</a> and <a href="https://github.com/kinoubenkyou/kelican">original theme</a>.</p>
+	</div>
+        </aside>
+
+    <section class="main">
+        <article class="post">
+            <div class="title"><a href="#">Liskob Substitution Principle</a></div>
+            <p>
+		21 May 2019
+		    | <a href="./category/general.html">General</a>
+                    |
+                        <a href="./tag/ruby.html">Ruby</a>,                         <a href="./tag/design-principles.html">Design Principles</a>,                         <a href="./tag/solid.html">Solid</a>	    </p>
+            <div class="content">
+                <p><h1>Idea:</h1>
+<p>"Software entities should be open for extension, but closed for modification."</p>
+<p>Software entities can be functions or classes. In case of classes, design them so you can avoid modify their existing codes later.</p>
+<h1>Exmaple in Ruby:</h1>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span>
+  <span class="kp">attr_accessor</span> <span class="ss">:width</span><span class="p">,</span> <span class="ss">:height</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+    <span class="vi">@width</span> <span class="o">=</span> <span class="n">width</span>
+    <span class="vi">@height</span> <span class="o">=</span> <span class="n">height</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+
+<span class="k">class</span> <span class="nc">Circle</span>
+  <span class="kp">attr_accessor</span> <span class="ss">:radius</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span>
+    <span class="vi">@radius</span> <span class="o">=</span> <span class="n">radius</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+
+<span class="k">class</span> <span class="nc">Calculator</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">run</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">shape</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="n">shape</span><span class="o">.</span><span class="n">height</span> <span class="k">if</span> <span class="n">shape</span><span class="o">.</span><span class="n">is_a?</span> <span class="no">Rectangle</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">shape</span><span class="o">.</span><span class="n">radius</span> <span class="o">*</span> <span class="n">shape</span><span class="o">.</span><span class="n">radius</span> <span class="o">*</span> <span class="mi">3</span><span class="o">.</span><span class="mi">14</span> <span class="k">if</span> <span class="n">shape</span><span class="o">.</span><span class="n">is_a?</span> <span class="no">Circle</span>
+    <span class="k">return</span> <span class="n">area</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+
+
+<p>Later when you want to add more shapes, you have to modify method <code>run</code> of <code>Calculator</code>. Design them like these instead:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span>
+  <span class="kp">attr_accessor</span> <span class="ss">:width</span><span class="p">,</span> <span class="ss">:height</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+    <span class="vi">@width</span> <span class="o">=</span> <span class="n">width</span>
+    <span class="vi">@height</span> <span class="o">=</span> <span class="n">height</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">area</span>
+    <span class="vi">@width</span> <span class="o">*</span> <span class="vi">@height</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+
+<span class="k">class</span> <span class="nc">Circle</span>
+  <span class="kp">attr_accessor</span> <span class="ss">:radius</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span>
+    <span class="vi">@radius</span> <span class="o">=</span> <span class="n">radius</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">area</span>
+    <span class="vi">@radius</span> <span class="o">*</span> <span class="vi">@radius</span> <span class="o">*</span> <span class="mi">3</span><span class="o">.</span><span class="mi">14</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+
+<span class="k">class</span> <span class="nc">Calculator</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">run</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">shape</span><span class="o">.</span><span class="n">area</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+
+
+<p>The less modification on existing codes, the less trouble you will get.</p></p>
+            </div>
+        </article>
+    </section>
+    </body>
+</html>
