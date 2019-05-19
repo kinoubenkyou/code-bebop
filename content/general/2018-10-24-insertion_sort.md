@@ -1,6 +1,6 @@
 Tags: python, algorithm
 
-# Brief
+# Idea:
 
 Insertion sort moves the starting element of the unsorted side, one by one, toward the start of the list, until it is adjacent to a smaller element. The sort repeats this, each time reducing the unsorted side by 1 element at the start, until all elements are moved.
 

@@ -1,6 +1,6 @@
 Tags: python, algorithm
 
-# Idea
+# Idea:
 
 Selection sort finds the smallest element on the unsorted side of the list and swap it with the starting element on the unsorted side. The sort repeats this, each time reducing the unsorted side by 1 element at the start, until all elements are swapped.
 

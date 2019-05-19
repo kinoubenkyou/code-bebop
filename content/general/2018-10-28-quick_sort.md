@@ -1,6 +1,6 @@
 Tags: python, algorithm
 
-# Brief
+# Idea:
 
 Quick sort chooses one element as the pivot and separates the others into two lists, one with larger and one with smaller elements than the pivot. This is done by, from the two ends of the list toward the middle, selecting elements which are on incorrect sides and swapping them, until the two selections meet each others. The sort repeats this on the two sub-lists until the they only have one element and cannot be divided anymore.
 

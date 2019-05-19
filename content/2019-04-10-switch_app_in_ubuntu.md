@@ -1,4 +1,5 @@
 Tags: bash, gnome
+Status: draft
 
 After updating to Ubuntu 18, I realized a change in the app switching flow due to the change of desktop environment. Back then with Unity, the `alt + num` would take you to the lastest window of the app in the position on the dock. Gnome, on the other hand, shows all the windows of the app and you spend addition taps to open them. I live with this, because of reasons, until today when I accidentally find out the hotkey for workspace switching. Hopefully if I put each window of a same app on different workspaces, switching to that app would open right away the window of the current workspace.
 

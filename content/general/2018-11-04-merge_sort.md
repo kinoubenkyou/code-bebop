@@ -1,6 +1,6 @@
 Tags: python, algorithm
 
-# Brief
+# Idea:
 
 Merge sort merges two sorted sub-lists of equal length into one sorted list. This is done by repeatedly copying the smallest element among the two sub-lists to an additional list until all elements are copied, then copying them back. The sub-lists are sorted themselves through the same merging of their own sub-lists. The smallest sub-lists have only one element.
 

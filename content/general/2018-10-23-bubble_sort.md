@@ -1,6 +1,6 @@
 Tags: python, algorithm
 
-# Brief
+# Idea:
 
 Bubble sort compares each pair of adjacent elements on the unsorted side of the list and swapping them if they are in the wrong order. The sort repeats this, each time reducing the unsorted side by 1 element at the end, until no element is left on the unsorted side.
 
