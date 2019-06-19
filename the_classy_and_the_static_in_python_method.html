@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
         <meta charset="utf-8" />
-        <title>the_classy_and_the_static_in_python_method</title>
+        <title>The Classy And The Static In Python Method</title>
         <link rel="stylesheet" href="./theme/css/main.css" />
-</head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="./">Code Bebop </a></h1>
-                <nav><ul>
-                    <li class="active"><a href="./category/general.html">general</a></li>
-                    <li><a href="./category/misc.html">misc</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="./the_classy_and_the_static_in_python_method.html" rel="bookmark"
-           title="Permalink to the_classy_and_the_static_in_python_method">the_classy_and_the_static_in_python_method</a></h1>
-    </header>
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
 
-    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-10-10T00:00:00+07:00">
-                Published: 10 Oct 2018
-        </abbr>
+    <body>
+        <aside class="side-bar">
+            <ul>
+                <li><a href="./">Code Bebop</a></li>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="./author/kinoubenkyou.html">kinoubenkyou</a>
-        </address>
-<p>In <a href="./category/general.html">general</a>.</p>
-<p>tags: <a href="./tag/python.html">python</a> </p>
-</footer><!-- /.post-info -->      <p>There are three types of method accessible in a Python class: instance, class and static methods. Consider the following class and its instances:</p>
+<li><br></li>
+                        <li class="active">
+                            <a href="./category/general.html">General</a>
+                        </li>
+                        <li>
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+
+
+        </ul>
+	<div class="credit">
+	    <p>Built with <a href="https://github.com/getpelican/pelican">Pelican</a> and <a href="https://github.com/kinoubenkyou/kelican">original theme</a>.</p>
+	</div>
+        </aside>
+
+    <section class="main">
+        <article class="post">
+            <div class="title"><a href="#">The Classy And The Static In Python Method</a></div>
+            <p>
+		10 Oct 2018
+		    | <a href="./category/general.html">General</a>
+                    |
+                        <a href="./tag/python.html">Python</a>	    </p>
+            <div class="content">
+                <p><p>There are three types of method accessible in a Python class: instance, class and static methods. Consider the following class and its instances:</p>
 <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
     <span class="n">head</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">tail</span> <span class="o">=</span> <span class="mi">1</span>
@@ -69,21 +75,9 @@
 <div class="highlight"><pre><span></span><span class="n">Animal</span><span class="o">.</span><span class="n">count_tail</span><span class="p">()</span>  <span class="c1"># TypeError: count_tail() takes exactly 1 argument (0 given)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">Animal</span><span class="o">.</span><span class="n">count_head</span> <span class="ow">is</span> <span class="n">Animal</span><span class="o">.</span><span class="n">count_head</span><span class="p">)</span>  <span class="c1"># False</span>
 <span class="k">print</span><span class="p">(</span><span class="n">Animal</span><span class="o">.</span><span class="n">count_tail</span> <span class="ow">is</span> <span class="n">Animal</span><span class="o">.</span><span class="n">count_tail</span><span class="p">)</span>  <span class="c1"># True</span>
-</pre></div>
-    </div><!-- /.entry-content -->
-
-  </article>
-</section>
-        <section id="extras" class="body">
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
+</pre></div></p>
+            </div>
+        </article>
+    </section>
+    </body>
 </html>

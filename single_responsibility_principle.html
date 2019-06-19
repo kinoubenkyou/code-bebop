@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
         <meta charset="utf-8" />
-        <title>single_responsibility_principle</title>
+        <title>Single Responsibility Principle</title>
         <link rel="stylesheet" href="./theme/css/main.css" />
-</head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="./">Code Bebop </a></h1>
-                <nav><ul>
-                    <li class="active"><a href="./category/general.html">general</a></li>
-                    <li><a href="./category/misc.html">misc</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="./single_responsibility_principle.html" rel="bookmark"
-           title="Permalink to single_responsibility_principle">single_responsibility_principle</a></h1>
-    </header>
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
 
-    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2019-05-19T00:00:00+07:00">
-                Published: 19 May 2019
-        </abbr>
+    <body>
+        <aside class="side-bar">
+            <ul>
+                <li><a href="./">Code Bebop</a></li>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="./author/kinoubenkyou.html">kinoubenkyou</a>
-        </address>
-<p>In <a href="./category/general.html">general</a>.</p>
-<p>tags: <a href="./tag/ruby.html">ruby</a> <a href="./tag/design-principles.html">design principles</a> <a href="./tag/solid.html">solid</a> </p>
-</footer><!-- /.post-info -->      <h1>Idea:</h1>
+<li><br></li>
+                        <li class="active">
+                            <a href="./category/general.html">General</a>
+                        </li>
+                        <li>
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+
+
+        </ul>
+	<div class="credit">
+	    <p>Built with <a href="https://github.com/getpelican/pelican">Pelican</a> and <a href="https://github.com/kinoubenkyou/kelican">original theme</a>.</p>
+	</div>
+        </aside>
+
+    <section class="main">
+        <article class="post">
+            <div class="title"><a href="#">Single Responsibility Principle</a></div>
+            <p>
+		19 May 2019
+		    | <a href="./category/general.html">General</a>
+                    |
+                        <a href="./tag/ruby.html">Ruby</a>,                         <a href="./tag/design-principles.html">Design Principles</a>,                         <a href="./tag/solid.html">Solid</a>	    </p>
+            <div class="content">
+                <p><h1>Idea:</h1>
 <p>"There should never be more than one reason for a class to change."</p>
 <p>A class should have codes for only one thing.</p>
 <h1>Example in Ruby:</h1>
@@ -72,21 +78,9 @@
 </pre></div>
 
 
-<p>Later when you need the calculation logic, there's a better chance you can find it in the code base.</p>
-    </div><!-- /.entry-content -->
-
-  </article>
-</section>
-        <section id="extras" class="body">
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
+<p>Later when you need the calculation logic, there's a better chance you can find it in the code base.</p></p>
+            </div>
+        </article>
+    </section>
+    </body>
 </html>

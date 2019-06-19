@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
         <meta charset="utf-8" />
-        <title>heap_sort</title>
+        <title>Heap Sort</title>
         <link rel="stylesheet" href="./theme/css/main.css" />
-</head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="./">Code Bebop </a></h1>
-                <nav><ul>
-                    <li class="active"><a href="./category/general.html">general</a></li>
-                    <li><a href="./category/misc.html">misc</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="./heap_sort.html" rel="bookmark"
-           title="Permalink to heap_sort">heap_sort</a></h1>
-    </header>
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
 
-    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-10-30T00:00:00+07:00">
-                Published: 30 Oct 2018
-        </abbr>
+    <body>
+        <aside class="side-bar">
+            <ul>
+                <li><a href="./">Code Bebop</a></li>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="./author/kinoubenkyou.html">kinoubenkyou</a>
-        </address>
-<p>In <a href="./category/general.html">general</a>.</p>
-<p>tags: <a href="./tag/python.html">python</a> <a href="./tag/algorithm.html">algorithm</a> </p>
-</footer><!-- /.post-info -->      <h1>Idea:</h1>
+<li><br></li>
+                        <li class="active">
+                            <a href="./category/general.html">General</a>
+                        </li>
+                        <li>
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+
+
+        </ul>
+	<div class="credit">
+	    <p>Built with <a href="https://github.com/getpelican/pelican">Pelican</a> and <a href="https://github.com/kinoubenkyou/kelican">original theme</a>.</p>
+	</div>
+        </aside>
+
+    <section class="main">
+        <article class="post">
+            <div class="title"><a href="#">Heap Sort</a></div>
+            <p>
+		30 Oct 2018
+		    | <a href="./category/general.html">General</a>
+                    |
+                        <a href="./tag/python.html">Python</a>,                         <a href="./tag/algorithm.html">Algorithm</a>	    </p>
+            <div class="content">
+                <p><h1>Idea:</h1>
 <p>Heap sort first turns the list into a heap, then swaps the root with the last leaf to prepend the sorted side, as well as sifting down the new root to maintain the heap condition. The sort repeats this, each time reducing the length of the heap by one element, until the heap is empty.</p>
 <h1>Space Complexity of O(1):</h1>
 <p>No additional list is used.</p>
@@ -77,21 +83,9 @@
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">))):</span>
         <span class="n">swap</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
         <span class="n">sift_down</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-</pre></div>
-    </div><!-- /.entry-content -->
-
-  </article>
-</section>
-        <section id="extras" class="body">
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
+</pre></div></p>
+            </div>
+        </article>
+    </section>
+    </body>
 </html>

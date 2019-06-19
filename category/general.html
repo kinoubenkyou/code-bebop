@@ -1,323 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
         <meta charset="utf-8" />
-        <title>Code Bebop - general</title>
+        <title>Code Bebop - General</title>
         <link rel="stylesheet" href="../theme/css/main.css" />
-</head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="../">Code Bebop </a></h1>
-                <nav><ul>
-                    <li class="active"><a href="../category/general.html">general</a></li>
-                    <li><a href="../category/misc.html">misc</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="../liskob_substitution_principle.html">liskob_substitution_principle</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2019-05-21T00:00:00+07:00">
-                Published: 21 May 2019
-        </abbr>
+    <body>
+        <aside class="side-bar">
+            <ul>
+                <li><a href="../">Code Bebop</a></li>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="../author/kinoubenkyou.html">kinoubenkyou</a>
-        </address>
-<p>In <a href="../category/general.html">general</a>.</p>
-<p>tags: <a href="../tag/ruby.html">ruby</a> <a href="../tag/design-principles.html">design principles</a> <a href="../tag/solid.html">solid</a> </p>
-</footer><!-- /.post-info --><h1>Idea:</h1>
-<p>"Software entities should be open for extension, but closed for modification."</p>
-<p>Software entities can be functions or classes. In case of classes, design them so you can avoid modify their existing codes later.</p>
-<h1>Example in Ruby:</h1>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span>
-  <span class="kp">attr_accessor</span> <span class="ss">:width</span><span class="p">,</span> <span class="ss">:height</span>
-
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
-    <span class="vi">@width</span> <span class="o">=</span> <span class="n">width</span>
-    <span class="vi">@height</span> <span class="o">=</span> <span class="n">height</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+<li><br></li>
+                        <li class="active">
+                            <a href="../category/general.html">General</a>
+                        </li>
+                        <li>
+                            <a href="../category/misc.html">Misc</a>
+                        </li>
 
 
-<span class="k">class</span> <span class="nc">Circle</span>
-  <span class="kp">attr_accessor</span> <span class="ss">:radius</span>
+        </ul>
+	<div class="credit">
+	    <p>Built with <a href="https://github.com/getpelican/pelican">Pelican</a> and <a href="https://github.com/kinoubenkyou/kelican">original theme</a>.</p>
+	</div>
+        </aside>
 
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span>
-    <span class="vi">@radius</span> <span class="o">=</span> <span class="n">radius</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+        <section class="main">
+                <article class="post">
+                    <div class="title"><a href="../liskob_substitution_principle.html">Liskob Substitution Principle</a></div>
+                    <p>
+		        21 May 2019
+		            | <a href="../category/general.html">General</a>
+                            |
+                                <a href="../tag/ruby.html">Ruby</a>,                                 <a href="../tag/design-principles.html">Design Principles</a>,                                 <a href="../tag/solid.html">Solid</a>	            </p>
+                    <div class="summary">
+                        
+                    </div>
+                </article>
 
+                <article class="post">
+                    <div class="title"><a href="../open-closed_principle.html">Open-Closed Principle</a></div>
+                    <p>
+		        20 May 2019
+		            | <a href="../category/general.html">General</a>
+                            |
+                                <a href="../tag/ruby.html">Ruby</a>,                                 <a href="../tag/design-principles.html">Design Principles</a>,                                 <a href="../tag/solid.html">Solid</a>	            </p>
+                    <div class="summary">
+                        
+                    </div>
+                </article>
 
-<span class="k">class</span> <span class="nc">Calculator</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">run</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
-    <span class="n">area</span> <span class="o">=</span> <span class="n">shape</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="n">shape</span><span class="o">.</span><span class="n">height</span> <span class="k">if</span> <span class="n">shape</span><span class="o">.</span><span class="n">is_a?</span> <span class="no">Rectangle</span>
-    <span class="n">area</span> <span class="o">=</span> <span class="n">shape</span><span class="o">.</span><span class="n">radius</span> <span class="o">*</span> <span class="n">shape</span><span class="o">.</span><span class="n">radius</span> <span class="o">*</span> <span class="mi">3</span><span class="o">.</span><span class="mi">14</span> <span class="k">if</span> <span class="n">shape</span><span class="o">.</span><span class="n">is_a?</span> <span class="no">Circle</span>
-    <span class="k">return</span> <span class="n">area</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</pre></div>
+                <article class="post">
+                    <div class="title"><a href="../single_responsibility_principle.html">Single Responsibility Principle</a></div>
+                    <p>
+		        19 May 2019
+		            | <a href="../category/general.html">General</a>
+                            |
+                                <a href="../tag/ruby.html">Ruby</a>,                                 <a href="../tag/design-principles.html">Design Principles</a>,                                 <a href="../tag/solid.html">Solid</a>	            </p>
+                    <div class="summary">
+                        
+                    </div>
+                </article>
 
+                <article class="post">
+                    <div class="title"><a href="../install_and_use_virtualenv.html">Install And Use Virtualenv</a></div>
+                    <p>
+		        15 Dec 2018
+		            | <a href="../category/general.html">General</a>
+                            |
+                                <a href="../tag/bash.html">Bash</a>,                                 <a href="../tag/virtualenv.html">Virtualenv</a>	            </p>
+                    <div class="summary">
+                        
+                    </div>
+                </article>
 
-<p>Later when you want to add more shapes, you have to modify method <code>run</code> of <code>Calculator</code>. Design them like these instead:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span>
-  <span class="kp">attr_accessor</span> <span class="ss">:width</span><span class="p">,</span> <span class="ss">:height</span>
+                <article class="post">
+                    <div class="title"><a href="../merge_sort.html">Merge Sort</a></div>
+                    <p>
+		        04 Nov 2018
+		            | <a href="../category/general.html">General</a>
+                            |
+                                <a href="../tag/python.html">Python</a>,                                 <a href="../tag/algorithm.html">Algorithm</a>	            </p>
+                    <div class="summary">
+                        
+                    </div>
+                </article>
 
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
-    <span class="vi">@width</span> <span class="o">=</span> <span class="n">width</span>
-    <span class="vi">@height</span> <span class="o">=</span> <span class="n">height</span>
-  <span class="k">end</span>
+                <article class="post">
+                    <div class="title"><a href="../heap_sort.html">Heap Sort</a></div>
+                    <p>
+		        30 Oct 2018
+		            | <a href="../category/general.html">General</a>
+                            |
+                                <a href="../tag/python.html">Python</a>,                                 <a href="../tag/algorithm.html">Algorithm</a>	            </p>
+                    <div class="summary">
+                        
+                    </div>
+                </article>
 
-  <span class="k">def</span> <span class="nf">area</span>
-    <span class="vi">@width</span> <span class="o">*</span> <span class="vi">@height</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+                <article class="post">
+                    <div class="title"><a href="../quick_sort.html">Quick Sort</a></div>
+                    <p>
+		        28 Oct 2018
+		            | <a href="../category/general.html">General</a>
+                            |
+                                <a href="../tag/python.html">Python</a>,                                 <a href="../tag/algorithm.html">Algorithm</a>	            </p>
+                    <div class="summary">
+                        
+                    </div>
+                </article>
 
+                <article class="post">
+                    <div class="title"><a href="../insertion_sort.html">Insertion Sort</a></div>
+                    <p>
+		        24 Oct 2018
+		            | <a href="../category/general.html">General</a>
+                            |
+                                <a href="../tag/python.html">Python</a>,                                 <a href="../tag/algorithm.html">Algorithm</a>	            </p>
+                    <div class="summary">
+                        
+                    </div>
+                </article>
 
-<span class="k">class</span> <span class="nc">Circle</span>
-  <span class="kp">attr_accessor</span> <span class="ss">:radius</span>
+                <article class="post">
+                    <div class="title"><a href="../bubble_sort.html">Bubble Sort</a></div>
+                    <p>
+		        23 Oct 2018
+		            | <a href="../category/general.html">General</a>
+                            |
+                                <a href="../tag/python.html">Python</a>,                                 <a href="../tag/algorithm.html">Algorithm</a>	            </p>
+                    <div class="summary">
+                        
+                    </div>
+                </article>
 
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span>
-    <span class="vi">@radius</span> <span class="o">=</span> <span class="n">radius</span>
-  <span class="k">end</span>
+                <article class="post">
+                    <div class="title"><a href="../selection_sort.html">Selection Sort</a></div>
+                    <p>
+		        22 Oct 2018
+		            | <a href="../category/general.html">General</a>
+                            |
+                                <a href="../tag/python.html">Python</a>,                                 <a href="../tag/algorithm.html">Algorithm</a>	            </p>
+                    <div class="summary">
+                        
+                    </div>
+                </article>
 
-  <span class="k">def</span> <span class="nf">area</span>
-    <span class="vi">@radius</span> <span class="o">*</span> <span class="vi">@radius</span> <span class="o">*</span> <span class="mi">3</span><span class="o">.</span><span class="mi">14</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-
-<span class="k">class</span> <span class="nc">Calculator</span>
-
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">run</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">shape</span><span class="o">.</span><span class="n">area</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</pre></div>
-
-
-<p>The less modification on existing codes, the less trouble you will get.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../open-closed_principle.html" rel="bookmark"
-                           title="Permalink to open-closed_principle">open-closed_principle</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2019-05-20T00:00:00+07:00">
-                Published: 20 May 2019
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="../author/kinoubenkyou.html">kinoubenkyou</a>
-        </address>
-<p>In <a href="../category/general.html">general</a>.</p>
-<p>tags: <a href="../tag/ruby.html">ruby</a> <a href="../tag/design-principles.html">design principles</a> <a href="../tag/solid.html">solid</a> </p>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="../open-closed_principle.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../single_responsibility_principle.html" rel="bookmark"
-                           title="Permalink to single_responsibility_principle">single_responsibility_principle</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2019-05-19T00:00:00+07:00">
-                Published: 19 May 2019
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="../author/kinoubenkyou.html">kinoubenkyou</a>
-        </address>
-<p>In <a href="../category/general.html">general</a>.</p>
-<p>tags: <a href="../tag/ruby.html">ruby</a> <a href="../tag/design-principles.html">design principles</a> <a href="../tag/solid.html">solid</a> </p>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="../single_responsibility_principle.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../install_and_use_virtualenv.html" rel="bookmark"
-                           title="Permalink to install_and_use_virtualenv">install_and_use_virtualenv</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-12-15T00:00:00+07:00">
-                Published: 15 Dec 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="../author/kinoubenkyou.html">kinoubenkyou</a>
-        </address>
-<p>In <a href="../category/general.html">general</a>.</p>
-<p>tags: <a href="../tag/bash.html">bash</a> <a href="../tag/virtualenv.html">virtualenv</a> </p>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="../install_and_use_virtualenv.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../merge_sort.html" rel="bookmark"
-                           title="Permalink to merge_sort">merge_sort</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-11-04T00:00:00+07:00">
-                Published: 04 Nov 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="../author/kinoubenkyou.html">kinoubenkyou</a>
-        </address>
-<p>In <a href="../category/general.html">general</a>.</p>
-<p>tags: <a href="../tag/python.html">python</a> <a href="../tag/algorithm.html">algorithm</a> </p>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="../merge_sort.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../heap_sort.html" rel="bookmark"
-                           title="Permalink to heap_sort">heap_sort</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-10-30T00:00:00+07:00">
-                Published: 30 Oct 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="../author/kinoubenkyou.html">kinoubenkyou</a>
-        </address>
-<p>In <a href="../category/general.html">general</a>.</p>
-<p>tags: <a href="../tag/python.html">python</a> <a href="../tag/algorithm.html">algorithm</a> </p>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="../heap_sort.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../quick_sort.html" rel="bookmark"
-                           title="Permalink to quick_sort">quick_sort</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-10-28T00:00:00+07:00">
-                Published: 28 Oct 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="../author/kinoubenkyou.html">kinoubenkyou</a>
-        </address>
-<p>In <a href="../category/general.html">general</a>.</p>
-<p>tags: <a href="../tag/python.html">python</a> <a href="../tag/algorithm.html">algorithm</a> </p>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="../quick_sort.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../insertion_sort.html" rel="bookmark"
-                           title="Permalink to insertion_sort">insertion_sort</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-10-24T00:00:00+07:00">
-                Published: 24 Oct 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="../author/kinoubenkyou.html">kinoubenkyou</a>
-        </address>
-<p>In <a href="../category/general.html">general</a>.</p>
-<p>tags: <a href="../tag/python.html">python</a> <a href="../tag/algorithm.html">algorithm</a> </p>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="../insertion_sort.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../bubble_sort.html" rel="bookmark"
-                           title="Permalink to bubble_sort">bubble_sort</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-10-23T00:00:00+07:00">
-                Published: 23 Oct 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="../author/kinoubenkyou.html">kinoubenkyou</a>
-        </address>
-<p>In <a href="../category/general.html">general</a>.</p>
-<p>tags: <a href="../tag/python.html">python</a> <a href="../tag/algorithm.html">algorithm</a> </p>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="../bubble_sort.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../selection_sort.html" rel="bookmark"
-                           title="Permalink to selection_sort">selection_sort</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-10-22T00:00:00+07:00">
-                Published: 22 Oct 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="../author/kinoubenkyou.html">kinoubenkyou</a>
-        </address>
-<p>In <a href="../category/general.html">general</a>.</p>
-<p>tags: <a href="../tag/python.html">python</a> <a href="../tag/algorithm.html">algorithm</a> </p>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="../selection_sort.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-<p class="paginator">
-    Page 1 / 2
-        <a href="../category/general2.html">&raquo;</a>
-</p>
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
+                        <div class="main__pagination">
+    <p class="paginator">
+        Page 1 / 2
+            <a href="../category/general2.html">&gt;</a>
+    </p>
+                        </div>
+        </section>
+    </body>
 </html>
