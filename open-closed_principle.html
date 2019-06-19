@@ -1,53 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
         <meta charset="utf-8" />
-        <title>Open-Closed Principle</title>
+        <title>open-closed_principle</title>
         <link rel="stylesheet" href="./theme/css/main.css" />
+</head>
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-    </head>
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="./">Code Bebop </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="./category/general.html">general</a></li>
+                    <li><a href="./category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="./open-closed_principle.html" rel="bookmark"
+           title="Permalink to open-closed_principle">open-closed_principle</a></h1>
+    </header>
 
-    <body>
-        <aside class="side-bar">
-            <ul>
-                <li><a href="./">Code Bebop</a></li>
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2019-05-20T00:00:00+07:00">
+                Published: 20 May 2019
+        </abbr>
 
-<li><br></li>
-                        <li>
-                            <a href="./category/dev-ops.html">Dev-Ops</a>
-                        </li>
-                        <li class="active">
-                            <a href="./category/general.html">General</a>
-                        </li>
-                        <li>
-                            <a href="./category/misc.html">Misc</a>
-                        </li>
-
-
-        </ul>
-	<div class="credit">
-	    <p>Built with <a href="https://github.com/getpelican/pelican">Pelican</a> and <a href="https://github.com/kinoubenkyou/kelican">original theme</a>.</p>
-	</div>
-        </aside>
-
-    <section class="main">
-        <article class="post">
-            <div class="title"><a href="#">Open-Closed Principle</a></div>
-            <p>
-		20 May 2019
-		    | <a href="./category/general.html">General</a>
-                    |
-                        <a href="./tag/ruby.html">Ruby</a>,                         <a href="./tag/design-principles.html">Design Principles</a>,                         <a href="./tag/solid.html">Solid</a>	    </p>
-            <div class="content">
-                <p><h1>Idea:</h1>
+        <address class="vcard author">
+                By                         <a class="url fn" href="./author/kinoubenkyou.html">kinoubenkyou</a>
+        </address>
+<p>In <a href="./category/general.html">general</a>.</p>
+<p>tags: <a href="./tag/ruby.html">ruby</a> <a href="./tag/design-principles.html">design principles</a> <a href="./tag/solid.html">solid</a> </p>
+</footer><!-- /.post-info -->      <h1>Idea:</h1>
 <p>"Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it."</p>
 <p>Overiding methods in extended classes should not have unexpected effect on the base classes.</p>
 <h1>Example in Ruby:</h1>
 <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Square</span> <span class="o">&lt;</span> <span class="no">Rectangle</span>
-
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>
     <span class="vi">@width</span> <span class="o">=</span> <span class="n">side</span>
     <span class="vi">@height</span> <span class="o">=</span> <span class="n">side</span>
@@ -66,7 +56,6 @@
 
 
 <span class="k">class</span> <span class="nc">Transformer</span>
-
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">resize_by_area_through_width</span><span class="p">(</span><span class="n">rectangle</span><span class="p">,</span> <span class="n">new_area</span><span class="p">)</span>
     <span class="n">rectangle</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">new_area</span><span class="o">.</span><span class="n">to_f</span> <span class="o">/</span> <span class="n">rectangle</span><span class="o">.</span><span class="n">height</span>
   <span class="k">end</span>
@@ -74,9 +63,21 @@
 </pre></div>
 
 
-<p>The writer methods in <code>Square</code> unexpectedly modify the other attributes. This makes method <code>resize_by_area_through_width</code> of <code>Transformer</code> works incorrectly on <code>Square</code> object. Thus, <code>Square</code> should not extend from <code>Rectangle</code>.</p></p>
-            </div>
-        </article>
-    </section>
-    </body>
+<p>The writer methods in <code>Square</code> unexpectedly modify the other attributes. This makes method <code>resize_by_area_through_width</code> of <code>Transformer</code> works incorrectly on <code>Square</code> object. Thus, <code>Square</code> should not extend from <code>Rectangle</code>.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
 </html>
