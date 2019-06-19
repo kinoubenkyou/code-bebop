@@ -6,7 +6,7 @@ Tags: ruby, design principles, solid
 
 Software entities can be functions or classes. In case of classes, design them so you can avoid modify their existing codes later.
 
-# Exmaple in Ruby:
+# Example in Ruby:
 
 ```ruby
 class Rectangle
@@ -29,7 +29,6 @@ end
 
 
 class Calculator
-
   def self.run(shape)
     area = shape.width * shape.height if shape.is_a? Rectangle
     area = shape.radius * shape.radius * 3.14 if shape.is_a? Circle

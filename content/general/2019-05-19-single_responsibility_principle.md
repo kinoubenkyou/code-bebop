@@ -6,11 +6,10 @@ Tags: ruby, design principles, solid
 
 A class should have codes for only one thing.
 
-# Exmaple in Ruby:
+# Example in Ruby:
 
 ```ruby
 class Informer
-
   def self.run(shape)
     # calculate
     if shape.is_a? Rectangle
@@ -29,7 +28,6 @@ It has codes for two things: calculating and outputing. Break it into two classe
 
 ```ruby
 class Informer
-
   def self.run(shape)
     area = Calculator.run(shape)
     puts "area = #{area}"
@@ -38,7 +36,6 @@ end
 
 
 class Calculator
-
   def self.run(shape)
     area = shape.width * shape.height if shape.is_a? Rectangle
     area = shape.radius * shape.radius * 3.14 if shape.is_a? Circle

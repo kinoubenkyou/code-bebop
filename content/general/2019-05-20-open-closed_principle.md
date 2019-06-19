@@ -6,11 +6,10 @@ Tags: ruby, design principles, solid
 
 Overiding methods in extended classes should not have unexpected effect on the base classes.
 
-# Exmaple in Ruby:
+# Example in Ruby:
 
 ```ruby
 class Square < Rectangle
-
   def initialize(side)
     @width = side
     @height = side
@@ -29,7 +28,6 @@ end
 
 
 class Transformer
-
   def self.resize_by_area_through_width(rectangle, new_area)
     rectangle.width = new_area.to_f / rectangle.height
   end
