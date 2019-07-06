@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Manage Versions In Ruby Environment</title>
+        <link rel="stylesheet" href="./theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <aside class="side-bar">
+            <ul>
+                <li><a href="./">Code Bebop</a></li>
+
+<li><br></li>
+                        <li>
+                            <a href="./category/general.html">General</a>
+                        </li>
+                        <li>
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+                        <li class="active">
+                            <a href="./category/ops.html">Ops</a>
+                        </li>
+
+
+        </ul>
+	<div class="credit">
+	    <p>Built with <a href="https://github.com/getpelican/pelican">Pelican</a> and <a href="https://github.com/kinoubenkyou/kelican">original theme</a>.</p>
+	</div>
+        </aside>
+
+    <section class="main">
+        <article class="post">
+            <div class="title"><a href="#">Manage Versions In Ruby Environment</a></div>
+            <p>
+		07 Jul 2019
+		    | <a href="./category/ops.html">Ops</a>
+                    |
+                        <a href="./tag/bash.html">Bash</a>,                         <a href="./tag/ruby.html">Ruby</a>,                         <a href="./tag/gem.html">Gem</a>	    </p>
+            <div class="content">
+                <p><h1>Manage Ruby's Version</h1>
+<p>On your machine, there might be projects using different versions of Ruby. Installing them and using the correct one for each project is what a Ruby version manager for. The most popular managers are Rbenv and RVM.</p>
+<h1>Manage Gems' Version</h1>
+<p>With Rbenv, each ruby version has its own separate environment to install gems to. On the other hand, it is still possible to install different version of a same gem to one ruby environment. You can install a specific version of gem with <code>gem install &lt;gem-name&gt; -v &lt;version&gt;</code>. You can also run a specific version of a gem with <code>&lt;gem-binary&gt; _&lt;version&gt;_</code>.</p>
+<p>There is another way to manage gems' version from the local (project) point of view. This uses gem Bundler and a <code>Gemfile</code>, which is a list of gems and their corresponding version. When you are in the same directory with a <code>Gemfile</code>, you can install all the listed version of gems with <code>bundle install</code> and run each of them with <code>bundle exec &lt;gem-binary&gt;</code>.</p></p>
+            </div>
+        </article>
+    </section>
+    </body>
+</html>
