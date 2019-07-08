@@ -1,20 +1,20 @@
-Tags: bash, gnome
+Tags: bash, gnome, ubuntu
 
-Some configs for gnome in ubuntu 18:
+Some configs regarding app switching for Gnome in Ubuntu 18:
 
-- Clicking on app/shortcuting to app (super + num) results in cycling through the windows of app:
+- Clicking on app/hot-keying to app (super + num) results in cycling through the windows of an app:
 
 ```bash
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action cycle-windows
 ```
 
-- Prevent clicking/shortcuting to windows for other workspaces:
+- Prevent clicking/hot-keying to windows of other workspaces:
 
 ```bash
 gsettings set org.gnome.shell.app-switcher current-workspace-only true
 ```
 
-- Prevent cycling through apps (alt + tab) to include windows for other workspaces:
+- Prevent cycling through apps (alt + tab) to include windows of other workspaces:
 
 ```bash
 gsettings set org.gnome.shell.extensions.dash-to-dock isolate-workspaces true
