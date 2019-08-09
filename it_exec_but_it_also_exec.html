@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>It Exec But It Also Exec</title>
+        <link rel="stylesheet" href="./theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <aside class="side-bar">
+            <ul>
+                <li><a href="./">Code Bebop</a></li>
+
+<li><br></li>
+                        <li class="active">
+                            <a href="./category/general.html">General</a>
+                        </li>
+                        <li>
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+                        <li>
+                            <a href="./category/ops.html">Ops</a>
+                        </li>
+
+
+        </ul>
+	<div class="credit">
+	    <p>Built with <a href="https://github.com/getpelican/pelican">Pelican</a> and <a href="https://github.com/kinoubenkyou/kelican">original theme</a>.</p>
+	</div>
+        </aside>
+
+    <section class="main">
+        <article class="post">
+            <div class="title"><a href="#">It Exec But It Also Exec</a></div>
+            <p>
+		31 Jul 2019
+		    | <a href="./category/general.html">General</a>
+                    |
+                        <a href="./tag/concurrency.html">Concurrency</a>	    </p>
+            <div class="content">
+                <p><h1>Parallelism</h1>
+<p>A condition where two threads run together at the same time. This requires a system with multiple processors or a multi-core processor.</p>
+<h1>Concurrency</h1>
+<p>A condition where two threads run in time period overlapping to each others. By this definition, parallelism is technically a particular case of concurrency. However, concurrency is usually considered in a system with a single-core processor. This process switch forth and back between the threads to run them.</p>
+<h1>Global Interpreter Lock</h1>
+<p>A feature to prevent multi-threading parallelism. It ensures that, inside a process, only one thread can run at a time. It doesn't prevent switching between threads in a process though, thus doesn't prevent race condition.</p>
+<p>Parallelism can still be achieved against GIL through multi-processing.</p>
+<h1>Asynchronous</h1>
+<p>A condition where one thread doesn't wait for another thread to finish. Ajax call in Javascript is an example. The main thread running the browser doesn't have to wait for the thread running Ajax call to finish.</p></p>
+            </div>
+        </article>
+    </section>
+    </body>
+</html>
