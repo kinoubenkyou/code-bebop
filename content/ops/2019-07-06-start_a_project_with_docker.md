@@ -19,3 +19,9 @@ A typical project structure would include the project root containing a `docker-
 # Write a Dockerfile
 
 The idea is to write one by one line of instruction and try building the image with `docker build -t <service-name> .`. If it succeeds, the build for next line will continue on the lastest image without rebuilding from the start. If you change an old instruction, the image will have to rebuild from that point. The old image will be tagged to `<none>` and you can safely remove it.
+
+# Example
+
+Example for `docker-compose.yml` and `Dockerfile`:
+
+[https://github.com/kinoubenkyou/docker-example](https://github.com/kinoubenkyou/docker-example)
