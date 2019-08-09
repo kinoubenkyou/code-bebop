@@ -65,6 +65,10 @@ ul, ol {
   margin: 1.5em 0;
 }
 
+.article__content li:before {
+  content: "- ";
+}
+
 .article__content p {
   margin: 1.5em 0 1.5em;
   text-align: justify;
@@ -287,4 +291,12 @@ ul, ol {
     max-width: none;
     padding: 3em 2em 2em;
   }
+}
+
+/* Some shits for IE that I don't really get */
+
+@-ms-viewport {
+
+  width: device-width;
+
 }
