@@ -1,121 +1,290 @@
+/* import */
+
 @import url('pygment.css');
-@import url('https://fonts.googleapis.com/css?family=VT323');
+@import url('https://fonts.googleapis.com/css?family=Exo+2:400,700|Share+Tech+Mono&display=swap');
 
-body {
-  background-color: black;
-  color: #ccc;
-  font-family: 'VT323', monospace;
-  font-size: 1.5em;
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
-  color: #cc0;
-  font-weight: inherit;
-}
-
-p {
-  margin: 1em 0;
-}
+/* html element */
 
 a {
-  color: inherit;
-  cursor: pointer;
   text-decoration: none;
-}
-
-ul {
-  padding-left: 1.6em;
-  margin: 0.8em 0;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-code {
-  background-color: #333;
-  display: inline-block;
-  font-family: inherit;
-  padding: 0 0.4em;
-}
-
-.highlight {
-  background-color: #333;
-  margin: 0.8em 1.6em;
-  padding: 0.8em 1.6em;
-}
-
-.highlight pre {
-  word-break: break-all;
-  font-family: 'VT323', monospace;
+body {
+  background-color: #f7f7f7;
+  color: #404040;
+  font-family: monospace;
   margin: 0;
-  white-space: pre-wrap;
-}
-
-.side-bar {
-  border-left: 0.4em solid;
-  bottom: 0;
-  padding: 1.6em;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 8em;
-}
-
-.side-bar ul {
-  list-style: none;
   padding: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+h1,h2,h3,h4,h5,h6 {
   margin: 0;
 }
 
-.side-bar li {
-  color: #cc0;
-}
-
-.side-bar .credit {
-  bottom: 0;
-  padding-bottom: inherit;
-  padding-right: inherit;
-  position: absolute;
-}
-
-.side-bar .credit a {
-  color: #cc0;
-}
-
-.main {
-  margin-right: 11.6em;
-  padding: 1.6em 3.2em;
-}
-
-.post {
-  margin-bottom: 3.2em;
-}
-
-.post .title {
-  color: #cc0;
-  font-size: 2em;
+p {
   margin: 0;
 }
 
-.post .article-info {
+ul, ol {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* generated content */
+
+.article__content a {
+  color: #78bf30;
+}
+
+.article__content a:hover {
+  color: #bfbf30;
+}
+
+.article__content code {
+  color: #808080;
+  font-size: 0.75rem;
+}
+
+.article__content code,pre {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.article__content h1 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.25rem;
+  margin: 1.5em 0;
+}
+
+.article__content p {
+  margin: 1.5em 0 1.5em;
+  text-align: justify;
+}
+
+.article__content pre {
+  background-color: #efefef;
+  margin: 1.5em 0;
+  padding: 1em;
+  overflow: hidden;
+}
+
+.article__content pre:hover {
+  overflow: auto;
+}
+
+/* BEM */
+
+.article-item {
+  margin: 2em 0;
+}
+
+.article-item:first-child {
   margin-top: 0;
 }
 
-.post .summary a {
-  color: #cc0;
-}
-
-.post .content a {
-  color: #cc0;
-}
-
-.main__pagination {
-  text-align: right;
-}
-
-.paginator {
+.article-item:last-child {
   margin-bottom: 0;
+}
+
+.article-item__info {
+  color: #afafaf;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.75rem;
+}
+
+.article-item__title {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.25rem;
+}
+
+.article__content {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1rem;
+}
+
+.article__info {
+  color: #afafaf;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.75rem;
+  margin: 2em 0 0;
+}
+
+.article__title {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 2rem;
+  margin: 0 0 2em;
+}
+
+.article__title:before {
+  content: "> ";
+}
+
+.header {
+  padding: 2em 0 0 2em;
+  position: fixed;
+  top: 0;
+}
+
+.header__logo {
+  border-width: 6px;
+  height: 64px;
+  width: 64px;
+}
+
+.link_color_gray {
+  color: #404040
+}
+
+.link_color_gray:hover {
+  color: #404040
+}
+
+.link_color_green-yellow {
+  color: #78bf30
+}
+
+.link_color_green-yellow:hover {
+  color: #bfbf30
+}
+
+.logo {
+  background-color: #78bf30;
+  border-style: solid;
+  border-color: #404040;
+  box-sizing: border-box;
+  display: block;
+}
+
+.logo:hover {
+  background-color: #bfbf30;
+}
+
+.main {
+  box-sizing: border-box;
+  margin: auto;
+  max-width: 768px;
+  padding: 8em 8em 6em;
+}
+
+.side-header {
+  background-color: #efefef;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  padding: 4em 2em 2em;
+  position: fixed;
+  text-align: right;
+  top: 0;
+  width: 18em;
+}
+
+.side-header__author{
+  color: #7f7f7f;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1rem;
+  margin: 0 0 2em;
+}
+
+.side-header__credit {
+  color: #9f9f9f;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.75rem;
+}
+
+.side-header__logo {
+  border-width: 9px;
+  height: 96px;
+  margin: 0 0 48px auto;
+  width: 96px;
+}
+
+.side-header__site-name {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.side-header__site-subtitle {
+  font-family: 'Exo 2', sans-serif;
+  margin: 2em 0 0;
+}
+
+.side-main {
+  margin-left: 18em;
+  max-width: none;
+  padding: 4em 2em 2em;
+}
+
+/* tablet (ipad) */
+
+@media (max-width: 1000px) {
+
+  /* BEM */
+
+}
+
+/* mobile phone (iphone) */
+
+@media (max-width: 600px) {
+
+  /* BEM */
+
+  .header {
+    padding: 2em;
+    position: static;
+  }
+
+  .header__logo {
+    border-width: 3px;
+    height: 32px;
+    width: 32px;
+  }
+
+  .main {
+    padding-top: 4em;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  .side-header {
+    display: block;
+    position: static;
+    height: initial;
+    padding: 4em 2em 3em;
+    text-align: right;
+    top: initial;
+    width: initial;
+  }
+
+  .side-header__credit {
+    margin-top: 2em;
+  }
+
+  .side-header__logo {
+    border-width: 6px;
+    height: 64px;
+    margin-bottom: 32px;
+    width: 64px;
+  }
+
+  .side-header__site-subtitle {
+    margin-bottom: 2em;
+  }
+
+  .side-main {
+    margin-left: 0;
+    max-width: none;
+    padding: 3em 2em 2em;
+  }
 }

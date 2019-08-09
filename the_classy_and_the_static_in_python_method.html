@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>The Classy And The Static In Python Method</title>
+        <title>Code Bebop</title>
         <link rel="stylesheet" href="./theme/css/main.css" />
 
         <!--[if IE]>
@@ -11,38 +11,16 @@
     </head>
 
     <body>
-        <aside class="side-bar">
-            <ul>
-                <li><a href="./">Code Bebop</a></li>
+    <header class="header">
+        <a class="logo header__logo" href="./"></a>
+    </header>
 
-<li><br></li>
-                        <li class="active">
-                            <a href="./category/general.html">General</a>
-                        </li>
-                        <li>
-                            <a href="./category/misc.html">Misc</a>
-                        </li>
-                        <li>
-                            <a href="./category/ops.html">Ops</a>
-                        </li>
+    <main class="main">
+        <article class="article">
+            <div class="article__title">The Classy And The Static In Python Method</div>
 
-
-        </ul>
-	<div class="credit">
-	    <p>Built with <a href="https://github.com/getpelican/pelican">Pelican</a> and <a href="https://github.com/kinoubenkyou/kelican">original theme</a>.</p>
-	</div>
-        </aside>
-
-    <section class="main">
-        <article class="post">
-            <div class="title"><a href="#">The Classy And The Static In Python Method</a></div>
-            <p>
-		10 Oct 2018
-		    | <a href="./category/general.html">General</a>
-                    |
-                        <a href="./tag/python.html">Python</a>	    </p>
-            <div class="content">
-                <p><p>There are three types of method accessible in a Python class: instance, class and static methods. Consider the following class and its instances:</p>
+            <div class="article__content">
+                <p>There are three types of method accessible in a Python class: instance, class and static methods. Consider the following class and its instances:</p>
 <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
     <span class="n">head</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">tail</span> <span class="o">=</span> <span class="mi">1</span>
@@ -78,9 +56,13 @@
 <div class="highlight"><pre><span></span><span class="n">Animal</span><span class="o">.</span><span class="n">count_tail</span><span class="p">()</span>  <span class="c1"># TypeError: count_tail() takes exactly 1 argument (0 given)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">Animal</span><span class="o">.</span><span class="n">count_head</span> <span class="ow">is</span> <span class="n">Animal</span><span class="o">.</span><span class="n">count_head</span><span class="p">)</span>  <span class="c1"># False</span>
 <span class="k">print</span><span class="p">(</span><span class="n">Animal</span><span class="o">.</span><span class="n">count_tail</span> <span class="ow">is</span> <span class="n">Animal</span><span class="o">.</span><span class="n">count_tail</span><span class="p">)</span>  <span class="c1"># True</span>
-</pre></div></p>
+</pre></div>
             </div>
+
+            <div class="article__info">
+                10 Oct 2018 |
+                        <a class="link_color_green-yellow" href="./tag/python.html">python</a>            </div>
         </article>
-    </section>
+    </main>
     </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Start A Project With Docker</title>
+        <title>Code Bebop</title>
         <link rel="stylesheet" href="./theme/css/main.css" />
 
         <!--[if IE]>
@@ -11,38 +11,16 @@
     </head>
 
     <body>
-        <aside class="side-bar">
-            <ul>
-                <li><a href="./">Code Bebop</a></li>
+    <header class="header">
+        <a class="logo header__logo" href="./"></a>
+    </header>
 
-<li><br></li>
-                        <li>
-                            <a href="./category/general.html">General</a>
-                        </li>
-                        <li>
-                            <a href="./category/misc.html">Misc</a>
-                        </li>
-                        <li class="active">
-                            <a href="./category/ops.html">Ops</a>
-                        </li>
+    <main class="main">
+        <article class="article">
+            <div class="article__title">Start A Project With Docker</div>
 
-
-        </ul>
-	<div class="credit">
-	    <p>Built with <a href="https://github.com/getpelican/pelican">Pelican</a> and <a href="https://github.com/kinoubenkyou/kelican">original theme</a>.</p>
-	</div>
-        </aside>
-
-    <section class="main">
-        <article class="post">
-            <div class="title"><a href="#">Start A Project With Docker</a></div>
-            <p>
-		06 Jul 2019
-		    | <a href="./category/ops.html">Ops</a>
-                    |
-                        <a href="./tag/bash.html">Bash</a>,                         <a href="./tag/docker.html">Docker</a>	    </p>
-            <div class="content">
-                <p><h1>Brief Look at Docker</h1>
+            <div class="article__content">
+                <h1>Brief Look at Docker</h1>
 <p>Docker provides containers, a kind of virtual environment, for your project to run on. Containers are create from images, blueprints of the environments. They are usually created from a pre-built OS image provided by Docker Hub, followed by layers of instructions to install libraries or frameworks depended by the applications of your project. These instructions are writen to <code>Dockerfile</code>.</p>
 <p>A project usually has more than one application running together. Each of them ,when running in their own separated containers, are called services. All services can be configured in a single <code>docker-compose.yml</code>.</p>
 <p>A typical project structure would include the project root containing a <code>docker-compose.yml</code> and one/many application directories. Each of these directories would contain their own <code>Dockerfile</code>.</p>
@@ -58,9 +36,13 @@
 <p>The idea is to write one by one line of instruction and try building the image with <code>docker build -t &lt;service-name&gt; .</code>. If it succeeds, the build for next line will continue on the lastest image without rebuilding from the start. If you change an old instruction, the image will have to rebuild from that point. The old image will be tagged to <code>&lt;none&gt;</code> and you can safely remove it.</p>
 <h1>Example</h1>
 <p>Example for <code>docker-compose.yml</code> and <code>Dockerfile</code>:</p>
-<p><a href="https://github.com/kinoubenkyou/docker-example">https://github.com/kinoubenkyou/docker-example</a></p></p>
+<p><a href="https://github.com/kinoubenkyou/docker-example">https://github.com/kinoubenkyou/docker-example</a></p>
             </div>
+
+            <div class="article__info">
+                06 Jul 2019 |
+                        <a class="link_color_green-yellow" href="./tag/bash.html">bash</a> |                         <a class="link_color_green-yellow" href="./tag/docker.html">docker</a>            </div>
         </article>
-    </section>
+    </main>
     </body>
 </html>
