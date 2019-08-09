@@ -26,10 +26,11 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Pagination
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 0
 
 # Translation
 DEFAULT_LANG = 'en'
 
 # Theme
+SITESUBTITLE = "I'm a Saigon-based software engineer. Currently, I work on back-end for a company using Rails."
 SOCIAL = ()
