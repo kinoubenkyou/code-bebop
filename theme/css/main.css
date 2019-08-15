@@ -35,8 +35,8 @@ p {
 }
 
 ul, ol {
-  list-style: none;
-  padding-left: 0;
+  list-style-position: inside;
+  padding: 0 1em;
   margin: 0;
 }
 
@@ -65,8 +65,8 @@ ul, ol {
   margin: 1.5em 0;
 }
 
-.article__content li:before {
-  content: "- ";
+.article__content li:marker {
+  color: #808080;
 }
 
 .article__content p {
@@ -266,7 +266,7 @@ ul, ol {
     position: static;
     height: initial;
     padding: 4em 2em 3em;
-    text-align: right;
+    text-align: left;
     top: initial;
     width: initial;
   }
@@ -279,6 +279,8 @@ ul, ol {
     border-width: 6px;
     height: 64px;
     margin-bottom: 32px;
+    margin-left: 0;
+    margin-right: auto;
     width: 64px;
   }
 
@@ -293,7 +295,7 @@ ul, ol {
   }
 }
 
-/* Some shits for IE that I don't really get */
+/* for IE */
 
 @-ms-viewport {
 
