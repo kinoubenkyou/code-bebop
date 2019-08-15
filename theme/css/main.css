@@ -34,9 +34,15 @@ p {
   margin: 0;
 }
 
-ul, ol {
-  list-style-position: inside;
-  padding: 0 1em;
+ol {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
   margin: 0;
 }
 
@@ -65,10 +71,6 @@ ul, ol {
   margin: 1.5em 0;
 }
 
-.article__content li:marker {
-  color: #808080;
-}
-
 .article__content p {
   margin: 1.5em 0 1.5em;
   text-align: justify;
@@ -83,6 +85,18 @@ ul, ol {
 
 .article__content pre:hover {
   overflow: auto;
+}
+
+.article__content ol {
+  list-style: decimal inside;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.article__content ul {
+  list-style: disc inside;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 /* BEM */
