@@ -28,6 +28,6 @@ If it succeeds, the build for next line will continue on the lastest image witho
 
 # Example
 
-Example for `docker-compose.yml` and `Dockerfile`:
+`docker-compose.yml` and `Dockerfile`:
 
 [https://github.com/kinoubenkyou/docker-example](https://github.com/kinoubenkyou/docker-example)

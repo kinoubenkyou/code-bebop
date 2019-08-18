@@ -1,10 +1,10 @@
 Tags: bash, git, github
 
-Images stored on Github repo can be accessed from the rendered readme. This is convenient, but be aware of the repo size limit of Github. The images can be stored on a dedicated branch, which might help to avoid dangling image files in git history when they are not needed anymore. The idea is deleting the old branch and then creating a brand new one.
+Images stored on Github repo can be accessed by the Github rendered readme. This is convenient, but be aware of the repo size limit of Github.
 
-This example is writen based on:
+The images can be stored on a dedicated branch, which might help to avoid dangling image files in git history when they are not needed anymore
 
-- Git 2.17.1
+# Example
 
 Create an empty branch, named "assets" for example:
 

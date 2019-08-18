@@ -1,43 +1,106 @@
 Tags: python
 
-There are three types of method accessible in a Python class: instance, class and static methods. Consider the following class and its instances:
+There are three types of method in Python classes: instance, class and static methods. Consider the following class and its instance:
 
 ```python
-class Animal:
-    head = 1
-    tail = 1
+class Class:
+    class_var = 0
 
     @classmethod
-    def count_head(cls):
-        print(cls.head)
+    def class_method_0(cls):
+        print(cls.class_var)
 
-    def __init__(self, leg):
-        self.leg = leg
+    @classmethod
+    def class_method_1(cls):
+        print(cls.instance_var)
 
-    def count_leg(self):
-        print(self.leg)
+    def __init__(self, instance_var):
+        self.instance_var = instance_var
+
+    def instance_method(self):
+        print(self.instance_var)
+
+    def still_instance_method(not_self):
+        print(not_self.instance_var)
 
     @staticmethod
-    def count_tail(cls):
-        print(cls.tail)
+    def static_method(arg):
+        print(arg)
 
 
-bird = Animal(leg=2)
-dog = Animal(leg=4)
+obj = Class(instance_var=1)
+
+print(Class)  # <class '__main__.Class'>
+print(obj)  # <__main__.Class object at 0x7f606c892550>
 ```
 
-Instance and class methods are bounded. When called they automatically get the instance or class passed as the first argument. Thus they can access their class or instance variables respectively.
+# Bounding
+
+A method is bounded to an object when the object is passed implicitly as the first argument.
+
+# Instance Method
+
+When called by an instance, the method is bounded to the instance:
 
 ```python
-Animal.count_head()  # 1
-bird.count_leg()  # 2
-dog.count_leg()  # 4
+print(obj.instance_method)  # <bound method Class.instance_method of <__main__.Class object at 0x7f606c892550>>
+
+obj.instance_method()  # 1
 ```
 
-Static method is similar to class method, except it isn't bounded and cannot access the class or instance variables. However, static method use less memory as Python doesn't have to reinitialize the method.
+When called by a class, the method is not bounded and the first argument is not passed implicitly:
 
 ```python
-Animal.count_tail()  # TypeError: count_tail() takes exactly 1 argument (0 given)
-print(Animal.count_head is Animal.count_head)  # False
-print(Animal.count_tail is Animal.count_tail)  # True
+print(Class.instance_method)  # <function Class.instance_method at 0x7f606c889a60>
+
+Class.instance_method()  # TypeError: instance_method() missing 1 required positional argument: 'self'
 ```
+
+The first parameter `self` in instance methods is not a Python reversed word, which means it is just a convention. Indeed, the first parameter in instance methods can be named differently:
+
+```python
+print(obj.still_instance_method)  # <function Class.method at 0x7f606c889b70>
+print(Class.still_instance_method)  # <function Class.method at 0x7f606c889b70>
+
+Class.still_instance_method()  # TypeError: still_instance_method() missing 1 required positional argument: 'not_self'
+```
+
+# Class Method
+
+When called by a class, the method is bounced to the class:
+
+```python
+print(Class.class_method_0)  # <bound method Class.class_method_0 of <class '__main__.Class'>>
+
+Class.class_method_0()  # 0
+```
+
+When called by an instance, the method is bounced to the class of the instance:
+
+```python
+print(obj.class_method_0)  # <bound method Class.class_method of <class '__main__.Class'>>
+
+obj.class_method_0()  # 0
+
+obj.class_method_1()  # AttributeError: type object 'Class' has no attribute 'instance_var'
+```
+
+In the last statement, the error specifies `type object 'Class'` instead of `'Class' object`, which means the instance `obj`
+
+# Static Method
+
+Static methods are not bounded and the first argument is not passed implicitly:
+
+```python
+print(Class.static_method)  # <function Class.static_method at 0x7f606c889c80>
+print(obj.static_method)  # <function Class.static_method at 0x7f606c889c80>
+
+Class.static_method()  # TypeError: static_method_0() missing 1 required positional argument: 'arg'
+obj.static_method()  # TypeError: static_method_0() missing 1 required positional argument: 'arg'
+```
+
+Since static methods are not bounded, they are not supposed to access its class or the instances. Therefore, static  methods can be put outside the class as a separated function.
+
+One reason for them to stay inside a class is the convenience coming from classes' inheritance. When working with a subclass, instead of importing the function from the module including the superclass, the function can be called as an inherited static method directly from the subclass. 
+
+There is also the polymorphism, which allows the function to be overrided based on the subclasses it is called from.
