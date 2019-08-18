@@ -1,4 +1,5 @@
 Tags: ruby, design principles, solid
+Status: draft
 
 # Idea:
 
