@@ -21,43 +21,95 @@
             <div class="article__title">The Classy And The Static In Python Method</div>
 
             <div class="article__content">
-                <p>There are three types of method accessible in a Python class: instance, class and static methods. Consider the following class and its instances:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
-    <span class="n">head</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">tail</span> <span class="o">=</span> <span class="mi">1</span>
+                <p>There are three types of method in Python classes: instance, class and static methods. Consider the following class and its instance:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Class</span><span class="p">:</span>
+    <span class="n">class_var</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">count_head</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">head</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">class_method_0</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">class_var</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">leg</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">leg</span> <span class="o">=</span> <span class="n">leg</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">class_method_1</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">instance_var</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">count_leg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">leg</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance_var</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instance_var</span> <span class="o">=</span> <span class="n">instance_var</span>
+
+    <span class="k">def</span> <span class="nf">instance_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">instance_var</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">still_instance_method</span><span class="p">(</span><span class="n">not_self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">not_self</span><span class="o">.</span><span class="n">instance_var</span><span class="p">)</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">count_tail</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">tail</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">static_method</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
 
 
-<span class="n">bird</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="n">leg</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">dog</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="n">leg</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Class</span><span class="p">(</span><span class="n">instance_var</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">Class</span><span class="p">)</span>  <span class="c1"># &lt;class &#39;__main__.Class&#39;&gt;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>  <span class="c1"># &lt;__main__.Class object at 0x7f606c892550&gt;</span>
 </pre></div>
 
 
-<p>Instance and class methods are bounded. When called they automatically get the instance or class passed as the first argument. Thus they can access their class or instance variables respectively.</p>
-<div class="highlight"><pre><span></span><span class="n">Animal</span><span class="o">.</span><span class="n">count_head</span><span class="p">()</span>  <span class="c1"># 1</span>
-<span class="n">bird</span><span class="o">.</span><span class="n">count_leg</span><span class="p">()</span>  <span class="c1"># 2</span>
-<span class="n">dog</span><span class="o">.</span><span class="n">count_leg</span><span class="p">()</span>  <span class="c1"># 4</span>
+<h1>Bounding</h1>
+<p>A method is bounded to an object when the object is passed implicitly as the first argument.</p>
+<h1>Instance Method</h1>
+<p>When called by an instance, the method is bounded to the instance:</p>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">instance_method</span><span class="p">)</span>  <span class="c1"># &lt;bound method Class.instance_method of &lt;__main__.Class object at 0x7f606c892550&gt;&gt;</span>
+
+<span class="n">obj</span><span class="o">.</span><span class="n">instance_method</span><span class="p">()</span>  <span class="c1"># 1</span>
 </pre></div>
 
 
-<p>Static method is similar to class method, except it isn't bounded and cannot access the class or instance variables. However, static method use less memory as Python doesn't have to reinitialize the method.</p>
-<div class="highlight"><pre><span></span><span class="n">Animal</span><span class="o">.</span><span class="n">count_tail</span><span class="p">()</span>  <span class="c1"># TypeError: count_tail() takes exactly 1 argument (0 given)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">Animal</span><span class="o">.</span><span class="n">count_head</span> <span class="ow">is</span> <span class="n">Animal</span><span class="o">.</span><span class="n">count_head</span><span class="p">)</span>  <span class="c1"># False</span>
-<span class="k">print</span><span class="p">(</span><span class="n">Animal</span><span class="o">.</span><span class="n">count_tail</span> <span class="ow">is</span> <span class="n">Animal</span><span class="o">.</span><span class="n">count_tail</span><span class="p">)</span>  <span class="c1"># True</span>
+<p>When called by a class, the method is not bounded and the first argument is not passed implicitly:</p>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">Class</span><span class="o">.</span><span class="n">instance_method</span><span class="p">)</span>  <span class="c1"># &lt;function Class.instance_method at 0x7f606c889a60&gt;</span>
+
+<span class="n">Class</span><span class="o">.</span><span class="n">instance_method</span><span class="p">()</span>  <span class="c1"># TypeError: instance_method() missing 1 required positional argument: &#39;self&#39;</span>
 </pre></div>
+
+
+<p>The first parameter <code>self</code> in instance methods is not a Python reversed word, which means it is just a convention. Indeed, the first parameter in instance methods can be named differently:</p>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">still_instance_method</span><span class="p">)</span>  <span class="c1"># &lt;function Class.method at 0x7f606c889b70&gt;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">Class</span><span class="o">.</span><span class="n">still_instance_method</span><span class="p">)</span>  <span class="c1"># &lt;function Class.method at 0x7f606c889b70&gt;</span>
+
+<span class="n">Class</span><span class="o">.</span><span class="n">still_instance_method</span><span class="p">()</span>  <span class="c1"># TypeError: still_instance_method() missing 1 required positional argument: &#39;not_self&#39;</span>
+</pre></div>
+
+
+<h1>Class Method</h1>
+<p>When called by a class, the method is bounced to the class:</p>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">Class</span><span class="o">.</span><span class="n">class_method_0</span><span class="p">)</span>  <span class="c1"># &lt;bound method Class.class_method_0 of &lt;class &#39;__main__.Class&#39;&gt;&gt;</span>
+
+<span class="n">Class</span><span class="o">.</span><span class="n">class_method_0</span><span class="p">()</span>  <span class="c1"># 0</span>
+</pre></div>
+
+
+<p>When called by an instance, the method is bounced to the class of the instance:</p>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">class_method_0</span><span class="p">)</span>  <span class="c1"># &lt;bound method Class.class_method of &lt;class &#39;__main__.Class&#39;&gt;&gt;</span>
+
+<span class="n">obj</span><span class="o">.</span><span class="n">class_method_0</span><span class="p">()</span>  <span class="c1"># 0</span>
+
+<span class="n">obj</span><span class="o">.</span><span class="n">class_method_1</span><span class="p">()</span>  <span class="c1"># AttributeError: type object &#39;Class&#39; has no attribute &#39;instance_var&#39;</span>
+</pre></div>
+
+
+<p>In the last statement, the error specifies <code>type object 'Class'</code> instead of <code>'Class' object</code>, which means the instance <code>obj</code></p>
+<h1>Static Method</h1>
+<p>Static methods are not bounded and the first argument is not passed implicitly:</p>
+<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">Class</span><span class="o">.</span><span class="n">static_method</span><span class="p">)</span>  <span class="c1"># &lt;function Class.static_method at 0x7f606c889c80&gt;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">static_method</span><span class="p">)</span>  <span class="c1"># &lt;function Class.static_method at 0x7f606c889c80&gt;</span>
+
+<span class="n">Class</span><span class="o">.</span><span class="n">static_method</span><span class="p">()</span>  <span class="c1"># TypeError: static_method_0() missing 1 required positional argument: &#39;arg&#39;</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">static_method</span><span class="p">()</span>  <span class="c1"># TypeError: static_method_0() missing 1 required positional argument: &#39;arg&#39;</span>
+</pre></div>
+
+
+<p>Since static methods are not bounded, they are not supposed to access its class or the instances. Therefore, static  methods can be put outside the class as a separated function.</p>
+<p>One reason for them to stay inside a class is the convenience coming from classes' inheritance. When working with a subclass, instead of importing the function from the module including the superclass, the function can be called as an inherited static method directly from the subclass. </p>
+<p>There is also the polymorphism, which allows the function to be overrided based on the subclasses it is called from.</p>
             </div>
 
             <div class="article__info">

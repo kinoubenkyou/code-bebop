@@ -21,24 +21,17 @@
             <div class="article__title">Switch App In Ubuntu</div>
 
             <div class="article__content">
-                <p>Some configs regarding app switching for Gnome in Ubuntu 18:</p>
-<ul>
-<li>Clicking on app/hot-keying to app (super + num) results in cycling through the windows of an app:</li>
-</ul>
+                <p>Clicking on app/hot-keying to app (super + num) results in cycling through the windows of an app:</p>
 <div class="highlight"><pre><span></span>gsettings <span class="nb">set</span> org.gnome.shell.extensions.dash-to-dock click-action cycle-windows
 </pre></div>
 
 
-<ul>
-<li>Prevent clicking/hot-keying to windows of other workspaces:</li>
-</ul>
+<p>Prevent clicking/hot-keying to windows of other workspaces:</p>
 <div class="highlight"><pre><span></span>gsettings <span class="nb">set</span> org.gnome.shell.app-switcher current-workspace-only <span class="nb">true</span>
 </pre></div>
 
 
-<ul>
-<li>Prevent cycling through apps (alt + tab) to include windows of other workspaces:</li>
-</ul>
+<p>Prevent cycling through apps (alt + tab) to include windows of other workspaces:</p>
 <div class="highlight"><pre><span></span>gsettings <span class="nb">set</span> org.gnome.shell.extensions.dash-to-dock isolate-workspaces <span class="nb">true</span>
 </pre></div>
             </div>
